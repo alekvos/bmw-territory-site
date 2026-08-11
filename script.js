@@ -50,6 +50,22 @@ document.querySelectorAll('.nav-link').forEach((link) => {
   });
 });
 
+document.querySelectorAll('.page-link').forEach((link) => {
+  link.addEventListener('click', (event) => {
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+
+    event.preventDefault();
+    transitionTitle.textContent = link.querySelector('h3')?.textContent.replace(/\s+/g, ' ').trim() || 'УСЛУГА BMW';
+    transition.classList.remove('is-active');
+    void transition.offsetWidth;
+    transition.classList.add('is-active');
+
+    window.setTimeout(() => {
+      window.location.href = link.href;
+    }, 310);
+  });
+});
+
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
@@ -176,6 +192,15 @@ if (window.matchMedia('(pointer: fine)').matches && !window.matchMedia('(prefers
 }
 
 const bookingForm = document.querySelector('#bookingForm');
+const requestedService = new URLSearchParams(window.location.search).get('service');
+
+if (requestedService) {
+  const requestField = bookingForm.querySelector('textarea[name="message"]');
+  if (requestField && !requestField.value) {
+    requestField.value = `Интересует услуга: ${requestedService}. `;
+  }
+}
+
 bookingForm.addEventListener('submit', (event) => {
   event.preventDefault();
   const success = bookingForm.querySelector('.form-success');

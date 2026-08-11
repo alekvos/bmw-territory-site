@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://alekvos-bmw-territory-site-3f80.twc1.net/sitemap.xml

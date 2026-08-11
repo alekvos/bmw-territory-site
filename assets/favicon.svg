@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="14" fill="#080a0d"/>
-  <circle cx="32" cy="32" r="21" fill="none" stroke="#f7f8fa" stroke-width="3"/>
-  <path d="M32 11v42M11 32h42" stroke="#f7f8fa" stroke-width="2" opacity=".62"/>
-  <path d="M32 32h19a19 19 0 0 1-19 19z" fill="#1769ff"/>
-  <path d="M32 32V13a19 19 0 0 1 19 19z" fill="#f7f8fa"/>
-  <circle cx="32" cy="32" r="21" fill="none" stroke="#f7f8fa" stroke-width="3"/>
-  <text x="32" y="37" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="13" fill="#080a0d">BT</text>
+  <rect width="64" height="64" rx="14" fill="#f5fafc"/>
+  <circle cx="32" cy="32" r="22" fill="#fff" stroke="#7393a7" stroke-width="2"/>
+  <path d="M32 12a20 20 0 0 1 20 20H32Z" fill="#229bda"/>
+  <path d="M32 52a20 20 0 0 1-20-20h20Z" fill="#0866ac"/>
+  <path d="M32 12v40M12 32h40" stroke="#fff" stroke-width="1.5"/>
+  <circle cx="32" cy="32" r="11" fill="#f9fcfe"/>
+  <text x="32" y="35.5" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="8" fill="#0b2a3d">BT</text>
 </svg>

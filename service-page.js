@@ -205,7 +205,7 @@ app.innerHTML = `
   <header class="site-header service-header">
     <a class="brand page-link" href="../index.html#home" aria-label="BMW Территория — на главную">
       <span class="brand__roundel"><b>BT</b></span>
-      <span class="brand__text"><strong>BMW ТЕРРИТОРИЯ</strong><small>ПРОФИЛЬНЫЙ СЕРВИС · 1997</small></span>
+      <span class="brand__text"><strong>BMW ТЕРРИТОРИЯ</strong><small>СЕРВИС 1997 · BMW 2006</small></span>
     </a>
     <nav class="desktop-nav" aria-label="Основная навигация">
       <a class="page-link active" href="../index.html#services">УСЛУГИ</a>
@@ -242,7 +242,7 @@ app.innerHTML = `
           <a class="button button--primary page-link" href="${serviceUrl}"><span>ОБСУДИТЬ ЗАДАЧУ</span>${arrowSvg}</a>
           <a class="service-phone" href="tel:+79255054506"><small>КОНСУЛЬТАЦИЯ МАСТЕРА</small><strong>+7 (925) 505-45-06</strong></a>
         </div>
-        <div class="service-assurance"><span>СОГЛАСОВАНИЕ ДО РАБОТ</span><span>ПРОФИЛЬНАЯ КОМАНДА</span><span>С 1997 ГОДА</span></div>
+        <div class="service-assurance"><span>СОГЛАСОВАНИЕ ДО РАБОТ</span><span>ПРОФИЛЬНАЯ КОМАНДА</span><span>BMW С 2006 ГОДА</span></div>
       </div>
       <div class="service-detail-hero__visual">
         <img src="${service.image}" alt="${service.shortTitle} BMW" />
@@ -289,8 +289,8 @@ app.innerHTML = `
         ${service.result.map((item, index) => `<div class="result-line reveal"><span>0${index + 1}</span><strong>${item}</strong><i>${arrowSvg}</i></div>`).join('')}
       </div>
       <div class="service-result__facts reveal">
-        <div><strong>1997</strong><span>РАБОТАЕМ<br />С BMW</span></div>
-        <div><strong>BMW</strong><span>ПРОФИЛЬНАЯ<br />КОМПЕТЕНЦИЯ</span></div>
+        <div><strong>2006</strong><span>ПРОФИЛЬНО<br />С BMW</span></div>
+        <div><strong>1997</strong><span>РАБОТАЕТ<br />СЕРВИС</span></div>
         <div><strong>100%</strong><span>СОГЛАСОВАНИЕ<br />ДО РАБОТ</span></div>
       </div>
     </section>
@@ -323,7 +323,7 @@ app.innerHTML = `
   </main>
 
   <footer class="service-footer">
-    <a class="brand page-link" href="../index.html#home"><span class="brand__roundel"><b>BT</b></span><span class="brand__text"><strong>BMW ТЕРРИТОРИЯ</strong><small>ПРОФИЛЬНЫЙ СЕРВИС · 1997</small></span></a>
+    <a class="brand page-link" href="../index.html#home"><span class="brand__roundel"><b>BT</b></span><span class="brand__text"><strong>BMW ТЕРРИТОРИЯ</strong><small>СЕРВИС 1997 · BMW 2006</small></span></a>
     <p>Москва, ул. Ермакова Роща, 7А, стр. 1<br />Пн–Пт, 10:00–20:00</p>
     <p>Независимый профильный сервис.<br />Не является официальным дилером BMW AG.</p>
     <span>© 2026</span>

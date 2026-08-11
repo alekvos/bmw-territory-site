@@ -62,11 +62,11 @@ body.is-loaded .page-loader { opacity: 0; visibility: hidden; }
 .site-header::after { content: ""; position: absolute; left: 0; bottom: -1px; width: calc(var(--scroll-progress, 0) * 1%); height: 1px; background: linear-gradient(90deg, #075f9e, var(--blue-bright)); box-shadow: 0 0 10px rgba(43,169,255,.55); }
 .site-header.is-scrolled { height: 72px; background: rgba(7, 9, 12, .9); }
 .brand { display: inline-flex; align-items: center; gap: 13px; }
-.brand__roundel { position: relative; width: 42px; height: 42px; flex: 0 0 42px; border: 1px solid rgba(255,255,255,.65); border-radius: 50%; display: grid; place-items: center; overflow: hidden; box-shadow: inset 0 0 0 4px #0b0e12; background: #10151b; }
-.brand__roundel::before, .brand__roundel::after { content: ""; position: absolute; width: 16px; height: 16px; background: var(--blue); opacity: .8; }
-.brand__roundel::before { right: 3px; top: 3px; border-radius: 0 100% 0 0; }
-.brand__roundel::after { left: 3px; bottom: 3px; border-radius: 0 0 0 100%; }
-.brand__roundel b { position: relative; z-index: 2; font: 700 10px/1 var(--font-mono); letter-spacing: -.05em; text-shadow: 0 1px 3px #000; }
+.brand__roundel { position: relative; width: 44px; height: 44px; flex: 0 0 44px; border: 1px solid #8ea6b6; border-radius: 50%; display: grid; place-items: center; overflow: hidden; background: #f8fcff; box-shadow: inset 0 0 0 3px #fff, 0 7px 20px rgba(20,74,110,.14); }
+.brand__roundel::before { content: ""; position: absolute; inset: 5px; border-radius: 50%; background: conic-gradient(#eaf6fd 0 25%, #229bda 25% 50%, #f7fcff 50% 75%, #0866ac 75% 100%); box-shadow: inset 0 0 0 1px rgba(9,75,119,.2); }
+.brand__roundel::after { content: ""; position: absolute; inset: 5px; border-radius: 50%; background: linear-gradient(90deg, transparent calc(50% - .5px), rgba(255,255,255,.86) calc(50% - .5px) calc(50% + .5px), transparent calc(50% + .5px)), linear-gradient(0deg, transparent calc(50% - .5px), rgba(255,255,255,.86) calc(50% - .5px) calc(50% + .5px), transparent calc(50% + .5px)); }
+.brand__cross { display: none; }
+.brand__roundel b { position: relative; z-index: 2; width: 20px; height: 20px; display: grid; place-items: center; border-radius: 50%; color: #0b2a3d; background: rgba(250,253,255,.94); box-shadow: 0 2px 8px rgba(3,39,63,.18); font: 700 8px/1 var(--font-mono); letter-spacing: -.06em; }
 .brand__text { display: flex; flex-direction: column; gap: 4px; }
 .brand__text strong { font: 600 11px/1 var(--font-display); letter-spacing: .035em; }
 .brand__text small { color: #75818c; font: 500 7px/1 var(--font-mono); letter-spacing: .16em; }
@@ -143,6 +143,10 @@ body.is-loaded .hero-car { animation-play-state: running; }
 @keyframes carEnter { to { opacity: 1; transform: translate(0, -42%); } }
 .hero-car__svg { display: block; width: 100%; overflow: visible; filter: drop-shadow(0 30px 38px rgba(14,44,64,.28)); transition: transform .18s ease-out; }
 .hero-car__legacy { display: none !important; }
+.hero-car--photo { width: min(57vw, 990px); right: 1.5vw; top: 51%; }
+.hero-car--photo::before { content: ""; position: absolute; z-index: 0; inset: -14px 16px 15px -18px; background: linear-gradient(135deg, rgba(13,126,203,.2), rgba(255,255,255,.08)); border: 1px solid rgba(20,111,169,.18); clip-path: polygon(8% 0, 100% 0, 100% 84%, 92% 100%, 0 100%, 0 18%); }
+.hero-car--photo .hero-car__svg { position: relative; z-index: 1; aspect-ratio: 2.47 / 1; object-fit: cover; object-position: center 52%; clip-path: polygon(8% 0, 100% 0, 100% 84%, 92% 100%, 0 100%, 0 18%); filter: saturate(.9) contrast(1.08) brightness(1.04) drop-shadow(0 30px 38px rgba(14,44,64,.2)); }
+.hero-car--photo .hero-car__meta--bottom { bottom: 8%; color: #f3f9fc; text-shadow: 0 1px 10px rgba(2,18,29,.9); }
 .hero-car__meta { position: absolute; z-index: 2; display: flex; color: #426071; font: 500 8px/1 var(--font-mono); letter-spacing: .16em; }
 .hero-car__meta--top { top: 2%; left: 29%; right: 10%; justify-content: space-between; align-items: center; }
 .hero-car__meta--top b { width: 28px; height: 28px; border: 1px solid #8ba7b8; border-radius: 50%; display: grid; place-items: center; color: #24495f; background: rgba(255,255,255,.46); font-weight: 400; }
@@ -318,7 +322,7 @@ body.is-loaded:not(.car-arrived) .car-wheel .wheel-spokes { animation: wheelArri
 
 .site-footer { min-height: 125px; padding: 35px clamp(22px, 4.4vw, 84px); display: grid; grid-template-columns: 1fr 1fr 1fr; align-items: center; gap: 30px; border-top: 1px solid var(--line); background: #06080a; }
 .site-footer > p { max-width: 470px; margin: 0; color: #4d5862; font-size: 9px; line-height: 1.55; text-align: center; }
-.site-footer > div { justify-self: end; display: flex; align-items: center; gap: 24px; color: #56616b; font: 500 7px/1 var(--font-mono); letter-spacing: .08em; }
+.site-footer > div { justify-self: end; display: flex; flex-wrap: wrap; justify-content: flex-end; align-items: center; gap: 12px 24px; color: #56616b; font: 500 7px/1 var(--font-mono); letter-spacing: .08em; }
 
 .reveal { opacity: 0; transform: translateY(22px); transition: opacity .75s ease, transform .75s cubic-bezier(.16,1,.3,1); }
 .reveal.is-visible { opacity: 1; transform: none; }
@@ -330,6 +334,7 @@ body.is-loaded:not(.car-arrived) .car-wheel .wheel-spokes { animation: wheelArri
   .hero { min-height: 780px; }
   .hero__copy { width: 60%; }
   .hero-car { right: -3vw; width: 63vw; }
+  .hero-car--photo { right: -1vw; width: min(61vw, 950px); }
   .section { padding-left: 5vw; padding-right: 5vw; }
   .approach { gap: 5vw; }
   .booking__grid { gap: 5vw; }
@@ -341,6 +346,7 @@ body.is-loaded:not(.car-arrived) .car-wheel .wheel-spokes { animation: wheelArri
   .hero { height: auto; min-height: 860px; align-items: flex-start; padding-top: 160px; }
   .hero__copy { width: 78%; }
   .hero-car { width: 72vw; top: 58%; right: -12vw; }
+  .hero-car--photo { width: 75vw; top: 59%; right: -11vw; }
   .section-heading { grid-template-columns: 1fr; gap: 36px; }
   .section-heading > div:last-child { align-items: flex-start; }
   .service-card { grid-template-columns: 45% 55%; }
@@ -377,6 +383,7 @@ body.is-loaded:not(.car-arrived) .car-wheel .wheel-spokes { animation: wheelArri
   .hero__actions .button { min-height: 48px; padding: 0 16px; font-size: 7px; gap: 13px; }
   .text-link { font-size: 7px; }
   .hero-car { width: 107vw; top: 69%; right: -3vw; }
+  .hero-car--photo { width: 100vw; top: 69%; right: -1vw; }
   .hero-car__meta { display: none; }
   .hero__footnote { left: 18px; bottom: 24px; }
   .scroll-cue { display: none; }

@@ -115,9 +115,11 @@ const updateOnScroll = () => {
   document.documentElement.style.setProperty('--scroll-progress', Math.min((y / scrollRange) * 100, 100).toFixed(2));
   document.documentElement.style.setProperty('--wheel-turn', `${y * 0.58}deg`);
 
-  if (heroCar && y < window.innerHeight * 1.2) {
+  if (heroCar && window.innerWidth > 760 && y < window.innerHeight * 1.2) {
     const drift = Math.min(y * 0.08, 62);
     heroCar.style.marginRight = `${drift}px`;
+  } else if (heroCar && window.innerWidth <= 760) {
+    heroCar.style.marginRight = '';
   }
 
   serviceVisuals.forEach((visual) => {

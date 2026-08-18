@@ -201,6 +201,13 @@ if (requestedService) {
   }
 }
 
+document.querySelectorAll('[data-copy-phone]').forEach((link) => {
+  link.addEventListener('click', () => {
+    const phone = link.dataset.copyPhone;
+    if (phone && navigator.clipboard?.writeText) navigator.clipboard.writeText(`+${phone}`).catch(() => {});
+  });
+});
+
 bookingForm.addEventListener('submit', (event) => {
   event.preventDefault();
   const success = bookingForm.querySelector('.form-success');

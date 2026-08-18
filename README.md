@@ -4,7 +4,8 @@
 
 ## Публикация
 
-- Timeweb App Platform: https://alekvos-bmw-territory-site-3f80.twc1.net
+- Основной домен: https://bmw-territory.ru
+- Технический адрес Timeweb: https://alekvos-bmw-territory-site-3f80.twc1.net
 - GitHub Pages: https://alekvos.github.io/bmw-territory-site/
 - Репозиторий: https://github.com/alekvos/bmw-territory-site
 

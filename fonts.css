@@ -1,0 +1,13 @@
+@font-face { font-family: "Golos Text"; font-style: normal; font-weight: 400; font-display: swap; src: url("./assets/fonts/golos-text-400.ttf") format("truetype"); }
+@font-face { font-family: "Golos Text"; font-style: normal; font-weight: 500; font-display: swap; src: url("./assets/fonts/golos-text-500.ttf") format("truetype"); }
+@font-face { font-family: "Golos Text"; font-style: normal; font-weight: 600; font-display: swap; src: url("./assets/fonts/golos-text-600.ttf") format("truetype"); }
+@font-face { font-family: "Golos Text"; font-style: normal; font-weight: 700; font-display: swap; src: url("./assets/fonts/golos-text-700.ttf") format("truetype"); }
+@font-face { font-family: "JetBrains Mono"; font-style: normal; font-weight: 400; font-display: swap; src: url("./assets/fonts/jetbrains-mono-400.ttf") format("truetype"); }
+@font-face { font-family: "JetBrains Mono"; font-style: normal; font-weight: 500; font-display: swap; src: url("./assets/fonts/jetbrains-mono-500.ttf") format("truetype"); }
+@font-face { font-family: "JetBrains Mono"; font-style: normal; font-weight: 600; font-display: swap; src: url("./assets/fonts/jetbrains-mono-600.ttf") format("truetype"); }
+@font-face { font-family: "Playfair Display"; font-style: italic; font-weight: 500; font-display: swap; src: url("./assets/fonts/playfair-display-italic-500.ttf") format("truetype"); }
+@font-face { font-family: "Playfair Display"; font-style: italic; font-weight: 600; font-display: swap; src: url("./assets/fonts/playfair-display-italic-600.ttf") format("truetype"); }
+@font-face { font-family: "Unbounded"; font-style: normal; font-weight: 400; font-display: swap; src: url("./assets/fonts/unbounded-400.ttf") format("truetype"); }
+@font-face { font-family: "Unbounded"; font-style: normal; font-weight: 500; font-display: swap; src: url("./assets/fonts/unbounded-500.ttf") format("truetype"); }
+@font-face { font-family: "Unbounded"; font-style: normal; font-weight: 600; font-display: swap; src: url("./assets/fonts/unbounded-600.ttf") format("truetype"); }
+@font-face { font-family: "Unbounded"; font-style: normal; font-weight: 700; font-display: swap; src: url("./assets/fonts/unbounded-700.ttf") format("truetype"); }

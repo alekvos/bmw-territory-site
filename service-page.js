@@ -26,7 +26,7 @@ const serviceCatalog = {
       ['Сколько занимает диагностика?', 'Зависит от симптома и того, проявляется ли он постоянно. Точный формат мастер определит после первичного разговора.'],
       ['Вы диагностируете BMW всех поколений?', 'Работаем с разными поколениями BMW и подбираем метод проверки под архитектуру конкретного автомобиля.'],
     ],
-    related: ['electronics', 'engine', 'transmission'],
+    related: ['electronics', 'engine', 'maintenance'],
   },
   engine: {
     number: '02',
@@ -34,7 +34,7 @@ const serviceCatalog = {
     shortTitle: 'Двигатель и агрегаты',
     code: 'ENGINE / SYSTEM',
     image: '../assets/service-photos/review-08.jpg',
-    lead: 'От локальной течи до сложного ремонта — с дефектовкой и понятным объёмом работ.',
+    lead: 'От замены цепи ГРМ до капитального ремонта двигателя — с точной дефектовкой.',
     statement: 'Разбираем только то, что действительно требует вмешательства.',
     overview: 'Начинаем с внешних проверок и измерений, оцениваем состояние связанных узлов и согласовываем границы ремонта до разборки. После дефектовки показываем, что найдено и почему это нужно исправить.',
     signs: [
@@ -55,10 +55,40 @@ const serviceCatalog = {
       ['Можно приехать со своими запчастями?', 'Такой вариант можно обсудить с мастером заранее. Важно проверить совместимость и условия гарантии на работу.'],
       ['Сначала называете стоимость?', 'До диагностики называем понятный порядок оценки. Финальный объём согласовываем после подтверждения причины или дефектовки.'],
     ],
-    related: ['diagnostics', 'electronics', 'transmission'],
+    related: ['diagnostics', 'maintenance', 'transmission'],
+  },
+  maintenance: {
+    number: '03',
+    title: ['ОБСЛУЖИВАНИЕ', 'АВТОМОБИЛЯ'],
+    shortTitle: 'Обслуживание автомобиля',
+    code: 'OEM / SERVICE',
+    image: '../assets/service-photos/maintenance-workshop.webp',
+    lead: 'Плановое обслуживание с оригинальными расходными материалами и заранее понятной сметой.',
+    valueNote: 'ДЕЛАЕМ КАЧЕСТВЕННО — ПО ВМЕНЯЕМОЙ ЦЕНЕ',
+    statement: 'Хорошее обслуживание сохраняет ресурс автомобиля и не создаёт лишних расходов.',
+    overview: 'Подбираем регламент под двигатель, пробег и условия эксплуатации. Заранее согласовываем материалы и стоимость, используем подходящие оригинальные или проверенные расходники и фиксируем рекомендации на следующий визит.',
+    signs: [
+      ['ПЛАНОВОЕ ТО', 'Подошёл срок замены масла, фильтров и обязательных расходных материалов.'],
+      ['ПЕРЕД СЕЗОНОМ', 'Нужно проверить жидкости, тормоза, аккумулятор и ходовую перед сменой условий.'],
+      ['ПОСЛЕ ПОКУПКИ', 'История автомобиля неизвестна и требуется базовая точка отсчёта.'],
+      ['ПЕРЕД ПОЕЗДКОЙ', 'Нужна спокойная комплексная проверка автомобиля перед дальней дорогой.'],
+    ],
+    protocol: [
+      ['ИСТОРИЯ', 'Уточняем пробег, режим эксплуатации и выполненные ранее работы.'],
+      ['ОСМОТР', 'Проверяем жидкости, фильтры, тормоза, ходовую и основные системы.'],
+      ['ОБСЛУЖИВАНИЕ', 'Меняем согласованные материалы по технологическим требованиям BMW.'],
+      ['РЕКОМЕНДАЦИИ', 'Фиксируем состояние автомобиля и планируем следующий визит без лишних работ.'],
+    ],
+    result: ['Понятная смета до начала работ', 'Подходящие расходные материалы', 'Зафиксированный план следующего обслуживания'],
+    faq: [
+      ['Можно выбрать расходные материалы?', 'Да. Предложим подходящие варианты, объясним разницу и заранее согласуем итоговую стоимость.'],
+      ['Что входит в плановое ТО?', 'Состав зависит от модели, двигателя, пробега и истории. Перед записью мастер уточнит данные и предложит конкретный перечень.'],
+      ['Проверяете автомобиль кроме замены масла?', 'Да, во время обслуживания осматриваем основные узлы и сообщаем о найденном до любых дополнительных работ.'],
+    ],
+    related: ['engine', 'chassis', 'transmission'],
   },
   chassis: {
-    number: '03',
+    number: '04',
     title: ['ХОДОВАЯ', 'И ТОРМОЗА'],
     shortTitle: 'Ходовая и тормоза',
     code: 'CHASSIS / GEO',
@@ -84,14 +114,14 @@ const serviceCatalog = {
       ['Менять тормозные диски вместе с колодками?', 'Решение принимаем по фактической толщине, биению и состоянию рабочей поверхности.'],
       ['Можно проверить машину перед дальней поездкой?', 'Да, проведём комплексный осмотр ходовой, тормозов, шин и рабочих жидкостей.'],
     ],
-    related: ['diagnostics', 'engine', 'transmission'],
+    related: ['maintenance', 'diagnostics', 'transmission'],
   },
   electronics: {
-    number: '04',
+    number: '05',
     title: ['ЭЛЕКТРИКА', 'И ЭЛЕКТРОНИКА'],
     shortTitle: 'Электрика и электроника',
     code: 'ECU / NETWORK',
-    image: '../assets/service-photos/source-07.jpg',
+    image: '../assets/service-photos/electronics-workshop.webp',
     lead: 'Ищем неисправность по цепочке: от питания и проводки до логики электронных блоков.',
     statement: 'В сложной электронике важен не код ошибки, а связь между системами.',
     overview: 'Анализируем топологию автомобиля, питание, обмен данными и программное состояние модулей. Восстанавливаем работу системы без ненужной замены дорогих блоков.',
@@ -116,12 +146,12 @@ const serviceCatalog = {
     related: ['diagnostics', 'coding', 'engine'],
   },
   transmission: {
-    number: '05',
-    title: ['ТРАНСМИССИЯ', 'И xDRIVE'],
-    shortTitle: 'Трансмиссия и xDrive',
-    code: 'ZF / xDRIVE',
-    image: '../assets/service-photos/source-02.jpg',
-    lead: 'Диагностируем коробку, раздаточную систему и приводы как единый силовой тракт.',
+    number: '06',
+    title: ['ОБСЛУЖИВАНИЕ', 'ТРАНСМИССИИ И xDRIVE'],
+    shortTitle: 'Обслуживание трансмиссии и xDrive',
+    code: 'ATF / xDRIVE',
+    image: '../assets/service-photos/transmission-workshop.webp',
+    lead: 'Обслуживаем и диагностируем коробку, раздаточную систему и приводы как единый силовой тракт.',
     statement: 'Толчок при переключении — симптом. Наша задача — найти его источник.',
     overview: 'Сопоставляем адаптации, состояние масла, механику и работу связанных блоков. Отделяем программную проблему от гидравлической или механической до начала ремонта.',
     signs: [
@@ -145,7 +175,7 @@ const serviceCatalog = {
     related: ['diagnostics', 'chassis', 'engine'],
   },
   coding: {
-    number: '06',
+    number: '07',
     title: ['КОДИРОВАНИЕ', 'И ДООСНАЩЕНИЕ'],
     shortTitle: 'Кодирование и дооснащение',
     code: 'CODING / ISTA',
@@ -181,6 +211,10 @@ const app = document.querySelector('#serviceApp');
 const serviceUrl = `../index.html?service=${encodeURIComponent(service.shortTitle)}#booking`;
 
 const arrowSvg = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 7l5 5-5 5" /></svg>';
+const messengerLinksMarkup = `
+  <a class="messenger-link" href="https://max.ru/" target="_blank" rel="noreferrer" data-copy-phone="79255054506" aria-label="Написать в MAX" title="MAX — номер скопируется"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 5.5h13v10h-7l-4.5 3v-3H5.5z"/><path d="m8.5 13 1-5 2.5 3.4L14.5 8l1 5"/></svg><span class="sr-only">MAX</span></a>
+  <a class="messenger-link" href="https://wa.me/79255054506?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20BMW%20%D0%A2%D0%B5%D1%80%D1%80%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D1%8F." target="_blank" rel="noreferrer" aria-label="Написать в WhatsApp" title="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19.2 6.2 16A7.8 7.8 0 1 1 9 18.3z"/><path d="M9 8.4c.3 2.8 2 4.7 4.7 5.5l1.2-1.3 2 .9c-.2 1.5-1.2 2.3-2.6 2.3-3.8-.4-6.8-3.3-7.1-7 0-1.4.8-2.4 2.3-2.6l.9 2z"/></svg><span class="sr-only">WhatsApp</span></a>
+  <a class="messenger-link" href="https://t.me/+79255054506" target="_blank" rel="noreferrer" aria-label="Написать в Telegram" title="Telegram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 11.5 15.5-6-3 13-5-4-3 2.5.7-4.4z"/><path d="m9.2 12.6 6.6-4.2-4.3 6"/></svg><span class="sr-only">Telegram</span></a>`;
 
 const renderRelated = (key) => {
   const item = serviceCatalog[key];
@@ -214,7 +248,12 @@ app.innerHTML = `
       <a class="page-link" href="../index.html#contacts">КОНТАКТЫ</a>
     </nav>
     <div class="header-actions">
-      <a class="header-phone" href="tel:+79255054506"><small>ПН–ПТ, 10:00–20:00</small><span>+7 (925) 505-45-06</span></a>
+      <div class="header-contact">
+        <div class="header-messengers" aria-label="Написать в мессенджере">
+          ${messengerLinksMarkup}
+        </div>
+        <a class="header-phone" href="tel:+79255054506"><small>ПН–ПТ, 10:00–20:00</small><span>+7 (925) 505-45-06</span></a>
+      </div>
       <a class="button button--compact page-link" href="${serviceUrl}"><span>ЗАПИСАТЬСЯ</span>${arrowSvg}</a>
     </div>
     <button class="menu-toggle" type="button" aria-label="Открыть меню" aria-expanded="false"><span></span><span></span></button>
@@ -227,6 +266,12 @@ app.innerHTML = `
       <a class="page-link" href="../index.html#about"><span>03</span> О НАС</a>
       <a class="page-link" href="../index.html#contacts"><span>04</span> КОНТАКТЫ</a>
     </nav>
+    <div class="mobile-contacts">
+      <a class="mobile-phone" href="tel:+79255054506">+7 (925) 505-45-06</a>
+      <div class="header-messengers header-messengers--mobile">
+        ${messengerLinksMarkup}
+      </div>
+    </div>
     <a class="button page-link" href="${serviceUrl}">ЗАПИСАТЬСЯ</a>
   </div>
 
@@ -235,9 +280,10 @@ app.innerHTML = `
       <div class="service-detail-hero__grid" aria-hidden="true"></div>
       <div class="service-detail-hero__copy">
         <a class="service-back page-link" href="../index.html#services">${arrowSvg}<span>ВСЕ КОМПЕТЕНЦИИ</span></a>
-        <div class="service-eyebrow"><span>${service.number} / 06</span><i></i><em>${service.code}</em></div>
+        <div class="service-eyebrow"><span>${service.number} / 07</span><i></i><em>${service.code}</em></div>
         <h1><span>${service.title[0]}</span><strong>${service.title[1]}</strong></h1>
         <p>${service.lead}</p>
+        ${service.valueNote ? `<div class="service-value-note"><span>ПРИНЦИП СЕРВИСА</span><strong>${service.valueNote}</strong></div>` : ''}
         <div class="service-detail-hero__actions">
           <a class="button button--primary page-link" href="${serviceUrl}"><span>ОБСУДИТЬ ЗАДАЧУ</span>${arrowSvg}</a>
           <a class="service-phone" href="tel:+79255054506"><small>КОНСУЛЬТАЦИЯ МАСТЕРА</small><strong>+7 (925) 505-45-06</strong></a>
@@ -326,7 +372,7 @@ app.innerHTML = `
     <a class="brand page-link" href="../index.html#home"><span class="brand__roundel"><b>BT</b></span><span class="brand__text"><strong>BMW ТЕРРИТОРИЯ</strong><small>СЕРВИС 1997 · BMW 2006</small></span></a>
     <p>Москва, ул. Ермакова Роща, 7А, стр. 1<br />Пн–Пт, 10:00–20:00</p>
     <p>Независимый профильный сервис.<br />Не является официальным дилером BMW AG.</p>
-    <span>© 2026</span>
+    <div class="service-footer__meta"><a href="../privacy.html">ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ</a><span>© 2026</span></div>
   </footer>
 `;
 
@@ -337,6 +383,13 @@ const cursorRing = document.querySelector('.cursor-ring');
 const transition = document.querySelector('.service-transition');
 const menuToggle = document.querySelector('.menu-toggle');
 const mobileMenu = document.querySelector('.mobile-menu');
+
+document.querySelectorAll('[data-copy-phone]').forEach((link) => {
+  link.addEventListener('click', () => {
+    const phone = link.dataset.copyPhone;
+    if (phone && navigator.clipboard?.writeText) navigator.clipboard.writeText(`+${phone}`).catch(() => {});
+  });
+});
 
 const setMenu = (open) => {
   menuToggle.classList.toggle('is-open', open);

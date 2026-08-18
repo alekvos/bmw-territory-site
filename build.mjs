@@ -10,6 +10,9 @@ await mkdir(outputDir, { recursive: true });
 
 for (const file of [
   "index.html",
+  "privacy.html",
+  "consent.html",
+  "fonts.css",
   "styles.css",
   "script.js",
   "service-page.css",

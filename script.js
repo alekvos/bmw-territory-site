@@ -210,6 +210,33 @@ document.querySelectorAll('[data-copy-phone]').forEach((link) => {
   });
 });
 
+const mapContainer = document.querySelector('.contacts__map');
+const mapFrame = mapContainer?.querySelector('iframe[data-src]');
+const loadMapButton = mapContainer?.querySelector('[data-load-map]');
+let mapLoadTimer = 0;
+
+loadMapButton?.addEventListener('click', () => {
+  if (!mapFrame || mapContainer.classList.contains('is-loading')) return;
+
+  mapContainer.classList.add('is-loading');
+  loadMapButton.disabled = true;
+  loadMapButton.querySelector('span').textContent = 'ЗАГРУЖАЕМ КАРТУ';
+
+  mapFrame.addEventListener('load', () => {
+    window.clearTimeout(mapLoadTimer);
+    mapContainer.classList.remove('is-loading');
+    mapContainer.classList.add('is-loaded');
+  }, { once: true });
+
+  mapFrame.src = mapFrame.dataset.src;
+  mapLoadTimer = window.setTimeout(() => {
+    if (mapContainer.classList.contains('is-loaded')) return;
+    mapContainer.classList.remove('is-loading');
+    loadMapButton.disabled = false;
+    loadMapButton.querySelector('span').textContent = 'ПОВТОРИТЬ ЗАГРУЗКУ';
+  }, 8000);
+});
+
 const phoneInput = document.querySelector('input[name="phone"]');
 const phoneError = document.querySelector('#phoneError');
 const getPhoneDigits = () => phoneInput.value.replace(/\D/g, '');

@@ -557,11 +557,22 @@
       <section class="contacts" id="contacts">
         <div class="contacts__map" aria-label="BMW Территория на Яндекс Картах">
           <iframe
-            src="https://yandex.ru/map-widget/v1/?ll=37.531034%2C55.759199&amp;mode=poi&amp;poi%5Bpoint%5D=37.530072%2C55.759104&amp;poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D41344842841&amp;z=17.4"
+            data-src="https://yandex.ru/map-widget/v1/?ll=37.531034%2C55.759199&amp;mode=poi&amp;poi%5Bpoint%5D=37.530072%2C55.759104&amp;poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D41344842841&amp;z=17.4"
             title="BMW Территория — улица Ермакова Роща, 7А, стр. 1"
             loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
             allowfullscreen
           ></iframe>
+          <div class="map-consent">
+            <div class="map-consent__mark" aria-hidden="true"><span></span></div>
+            <span class="map-consent__eyebrow">ЯНДЕКС КАРТЫ</span>
+            <strong>ПОКАЗАТЬ СЕРВИС<br />НА КАРТЕ?</strong>
+            <p>Виджет Яндекса загрузится только после вашего нажатия.</p>
+            <button class="button button--primary map-consent__button" type="button" data-load-map>
+              <span>ЗАГРУЗИТЬ КАРТУ</span><svg viewBox="0 0 18 18"><path d="M4 9h10M10 5l4 4-4 4" /></svg>
+            </button>
+            <a href="https://yandex.ru/maps/-/CTWEzD~8" target="_blank" rel="noreferrer">ОТКРЫТЬ МАРШРУТ БЕЗ ВИДЖЕТА ↗</a>
+          </div>
           <div class="map-location-badge" aria-hidden="true">
             <span><i></i> ТОЧКА СЕРВИСА</span>
             <strong>55.759104° N<br />37.530072° E</strong>

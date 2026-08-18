@@ -147,8 +147,8 @@ const serviceCatalog = {
   },
   transmission: {
     number: '06',
-    title: ['ОБСЛУЖИВАНИЕ', 'ТРАНСМИССИИ И xDRIVE'],
-    shortTitle: 'Обслуживание трансмиссии и xDrive',
+    title: ['ОБСЛУЖИВАНИЕ И РЕМОНТ', 'ТРАНСМИССИИ'],
+    shortTitle: 'Обслуживание и ремонт трансмиссии',
     code: 'ATF / xDRIVE',
     image: '../assets/service-photos/transmission-workshop.webp',
     lead: 'Обслуживаем и диагностируем коробку, раздаточную систему и приводы как единый силовой тракт.',

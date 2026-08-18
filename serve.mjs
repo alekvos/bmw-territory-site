@@ -22,7 +22,13 @@ createServer(async (request, response) => {
     let filePath = path.resolve(root, `.${requestPath}`);
 
     if (!filePath.startsWith(root)) throw new Error("Invalid path");
-    if ((await stat(filePath)).isDirectory()) filePath = path.join(filePath, "index.html");
+
+    try {
+      if ((await stat(filePath)).isDirectory()) filePath = path.join(filePath, "index.html");
+    } catch (error) {
+      if (path.extname(filePath)) throw error;
+      filePath = `${filePath}.html`;
+    }
 
     const file = await readFile(filePath);
     response.writeHead(200, { "Content-Type": mimeTypes[path.extname(filePath)] || "application/octet-stream" });

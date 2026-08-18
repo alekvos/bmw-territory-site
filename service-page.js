@@ -208,7 +208,7 @@ const serviceCatalog = {
 const serviceKey = document.body.dataset.service;
 const service = serviceCatalog[serviceKey] || serviceCatalog.diagnostics;
 const app = document.querySelector('#serviceApp');
-const serviceUrl = `../index.html?service=${encodeURIComponent(service.shortTitle)}#booking`;
+const serviceUrl = `../?service=${encodeURIComponent(service.shortTitle)}#booking`;
 
 const arrowSvg = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 7l5 5-5 5" /></svg>';
 const messengerLinksMarkup = `
@@ -225,7 +225,7 @@ structuredData.textContent = JSON.stringify({
       '@type': 'Service',
       name: service.shortTitle,
       serviceType: service.title.join(' '),
-      url: `https://bmw-territory.ru/services/${serviceKey}.html`,
+      url: `https://bmw-territory.ru/services/${serviceKey}`,
       provider: {
         '@type': 'AutoRepair',
         name: 'BMW Территория',
@@ -244,7 +244,7 @@ structuredData.textContent = JSON.stringify({
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Главная', item: 'https://bmw-territory.ru/' },
         { '@type': 'ListItem', position: 2, name: 'Услуги', item: 'https://bmw-territory.ru/#services' },
-        { '@type': 'ListItem', position: 3, name: service.shortTitle, item: `https://bmw-territory.ru/services/${serviceKey}.html` },
+        { '@type': 'ListItem', position: 3, name: service.shortTitle, item: `https://bmw-territory.ru/services/${serviceKey}` },
       ],
     },
   ],
@@ -253,7 +253,7 @@ document.head.append(structuredData);
 
 const renderRelated = (key) => {
   const item = serviceCatalog[key];
-  return `<a class="related-card page-link reveal-card" href="./${key}.html">
+  return `<a class="related-card page-link reveal-card" href="./${key}">
     <span class="related-card__number">${item.number}</span>
     <img src="${item.image}" alt="${item.shortTitle}" loading="lazy" />
     <div><small>${item.code}</small><strong>${item.shortTitle}</strong></div>
@@ -272,15 +272,15 @@ app.innerHTML = `
   <div class="cursor-ring" aria-hidden="true"><span></span></div>
 
   <header class="site-header service-header">
-    <a class="brand page-link" href="../index.html#home" aria-label="BMW Территория — на главную">
+    <a class="brand page-link" href="../#home" aria-label="BMW Территория — на главную">
       <span class="brand__roundel"><b>BT</b></span>
       <span class="brand__text"><strong>BMW ТЕРРИТОРИЯ</strong><small>СЕРВИС 1997 · BMW 2006</small></span>
     </a>
     <nav class="desktop-nav" aria-label="Основная навигация">
-      <a class="page-link active" href="../index.html#services">УСЛУГИ</a>
-      <a class="page-link" href="../index.html#approach">ПОДХОД</a>
-      <a class="page-link" href="../index.html#about">О НАС</a>
-      <a class="page-link" href="../index.html#contacts">КОНТАКТЫ</a>
+      <a class="page-link active" href="../#services">УСЛУГИ</a>
+      <a class="page-link" href="../#approach">ПОДХОД</a>
+      <a class="page-link" href="../#about">О НАС</a>
+      <a class="page-link" href="../#contacts">КОНТАКТЫ</a>
     </nav>
     <div class="header-actions">
       <div class="header-contact">
@@ -296,10 +296,10 @@ app.innerHTML = `
 
   <div class="mobile-menu" aria-hidden="true">
     <nav>
-      <a class="page-link" href="../index.html#services"><span>01</span> УСЛУГИ</a>
-      <a class="page-link" href="../index.html#approach"><span>02</span> ПОДХОД</a>
-      <a class="page-link" href="../index.html#about"><span>03</span> О НАС</a>
-      <a class="page-link" href="../index.html#contacts"><span>04</span> КОНТАКТЫ</a>
+      <a class="page-link" href="../#services"><span>01</span> УСЛУГИ</a>
+      <a class="page-link" href="../#approach"><span>02</span> ПОДХОД</a>
+      <a class="page-link" href="../#about"><span>03</span> О НАС</a>
+      <a class="page-link" href="../#contacts"><span>04</span> КОНТАКТЫ</a>
     </nav>
     <div class="mobile-contacts">
       <a class="mobile-phone" href="tel:+79255054506">+7 (925) 505-45-06</a>
@@ -314,7 +314,7 @@ app.innerHTML = `
     <section class="service-detail-hero">
       <div class="service-detail-hero__grid" aria-hidden="true"></div>
       <div class="service-detail-hero__copy">
-        <a class="service-back page-link" href="../index.html#services">${arrowSvg}<span>ВСЕ КОМПЕТЕНЦИИ</span></a>
+        <a class="service-back page-link" href="../#services">${arrowSvg}<span>ВСЕ КОМПЕТЕНЦИИ</span></a>
         <div class="service-eyebrow"><span>${service.number} / 07</span><i></i><em>${service.code}</em></div>
         <h1><span>${service.title[0]}</span><strong>${service.title[1]}</strong></h1>
         <p>${service.lead}</p>
@@ -404,10 +404,10 @@ app.innerHTML = `
   </main>
 
   <footer class="service-footer">
-    <a class="brand page-link" href="../index.html#home"><span class="brand__roundel"><b>BT</b></span><span class="brand__text"><strong>BMW ТЕРРИТОРИЯ</strong><small>СЕРВИС 1997 · BMW 2006</small></span></a>
+    <a class="brand page-link" href="../#home"><span class="brand__roundel"><b>BT</b></span><span class="brand__text"><strong>BMW ТЕРРИТОРИЯ</strong><small>СЕРВИС 1997 · BMW 2006</small></span></a>
     <p>Москва, ул. Ермакова Роща, 7А, стр. 1<br />Пн–Пт, 10:00–20:00</p>
     <p>Независимый профильный сервис.<br />Не является официальным дилером BMW AG.</p>
-    <div class="service-footer__meta"><span>ООО «Амитэкс-М»<br />ИНН 7714761130 · ОГРН 5087746582985</span><small>Meta Platforms Inc. признана экстремистской организацией; решение суда не распространяется на WhatsApp.</small><a href="../privacy.html">ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ</a><span>© 2026</span></div>
+    <div class="service-footer__meta"><span>ООО «Амитэкс-М»<br />ИНН 7714761130 · ОГРН 5087746582985</span><small>Meta Platforms Inc. признана экстремистской организацией; решение суда не распространяется на WhatsApp.</small><a href="../privacy">ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ</a><span>© 2026</span></div>
   </footer>
 `;
 

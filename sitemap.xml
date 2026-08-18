@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://bmw-territory.ru/</loc><priority>1.0</priority></url>
-  <url><loc>https://bmw-territory.ru/services/diagnostics.html</loc><priority>0.8</priority></url>
-  <url><loc>https://bmw-territory.ru/services/engine.html</loc><priority>0.8</priority></url>
-  <url><loc>https://bmw-territory.ru/services/maintenance.html</loc><priority>0.8</priority></url>
-  <url><loc>https://bmw-territory.ru/services/chassis.html</loc><priority>0.8</priority></url>
-  <url><loc>https://bmw-territory.ru/services/electronics.html</loc><priority>0.8</priority></url>
-  <url><loc>https://bmw-territory.ru/services/transmission.html</loc><priority>0.8</priority></url>
-  <url><loc>https://bmw-territory.ru/services/coding.html</loc><priority>0.8</priority></url>
+  <url><loc>https://bmw-territory.ru/services/diagnostics</loc><priority>0.8</priority></url>
+  <url><loc>https://bmw-territory.ru/services/engine</loc><priority>0.8</priority></url>
+  <url><loc>https://bmw-territory.ru/services/maintenance</loc><priority>0.8</priority></url>
+  <url><loc>https://bmw-territory.ru/services/chassis</loc><priority>0.8</priority></url>
+  <url><loc>https://bmw-territory.ru/services/electronics</loc><priority>0.8</priority></url>
+  <url><loc>https://bmw-territory.ru/services/transmission</loc><priority>0.8</priority></url>
+  <url><loc>https://bmw-territory.ru/services/coding</loc><priority>0.8</priority></url>
 </urlset>

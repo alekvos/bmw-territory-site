@@ -210,8 +210,42 @@ document.querySelectorAll('[data-copy-phone]').forEach((link) => {
   });
 });
 
+const phoneInput = document.querySelector('input[name="phone"]');
+const phoneError = document.querySelector('#phoneError');
+const getPhoneDigits = () => phoneInput.value.replace(/\D/g, '');
+const validatePhone = (showError = false) => {
+  const isValid = getPhoneDigits().length === 11;
+  phoneInput.setCustomValidity(isValid ? '' : 'Укажите номер полностью — 11 цифр.');
+  phoneInput.setAttribute('aria-invalid', String(!isValid && phoneInput.value.length > 0));
+  phoneError?.classList.toggle('is-visible', showError && !isValid);
+  return isValid;
+};
+
+phoneInput.addEventListener('input', (event) => {
+  let digits = event.target.value.replace(/\D/g, '');
+  if (digits.startsWith('8')) digits = `7${digits.slice(1)}`;
+  if (digits && !digits.startsWith('7')) digits = `7${digits}`;
+  digits = digits.slice(0, 11);
+
+  let formatted = digits ? '+7' : '';
+  if (digits.length > 1) formatted += ` (${digits.slice(1, 4)}`;
+  if (digits.length >= 4) formatted += ') ';
+  if (digits.length > 4) formatted += digits.slice(4, 7);
+  if (digits.length > 7) formatted += `-${digits.slice(7, 9)}`;
+  if (digits.length > 9) formatted += `-${digits.slice(9, 11)}`;
+  event.target.value = formatted;
+  validatePhone(event.target.value.length > 0);
+});
+
+phoneInput.addEventListener('blur', () => validatePhone(true));
+
 bookingForm.addEventListener('submit', (event) => {
   event.preventDefault();
+  if (!validatePhone(true)) {
+    phoneInput.focus();
+    bookingForm.reportValidity();
+    return;
+  }
   const formData = new FormData(bookingForm);
   const value = (name) => String(formData.get(name) || '').trim();
   const message = [
@@ -230,17 +264,5 @@ bookingForm.addEventListener('submit', (event) => {
   success.classList.add('is-visible');
   window.setTimeout(() => {
     window.location.href = whatsappUrl;
-  }, 220);
-});
-
-const phoneInput = document.querySelector('input[name="phone"]');
-phoneInput.addEventListener('input', (event) => {
-  const digits = event.target.value.replace(/\D/g, '').replace(/^8/, '7').slice(0, 11);
-  let value = digits.startsWith('7') ? '+7' : '+';
-  if (digits.length > 1) value += ` (${digits.slice(1, 4)}`;
-  if (digits.length >= 4) value += ') ';
-  if (digits.length > 4) value += digits.slice(4, 7);
-  if (digits.length > 7) value += `-${digits.slice(7, 9)}`;
-  if (digits.length > 9) value += `-${digits.slice(9, 11)}`;
-  event.target.value = value;
+  }, 320);
 });

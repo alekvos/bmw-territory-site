@@ -212,9 +212,44 @@ const serviceUrl = `../index.html?service=${encodeURIComponent(service.shortTitl
 
 const arrowSvg = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 7l5 5-5 5" /></svg>';
 const messengerLinksMarkup = `
-  <a class="messenger-link" href="https://max.ru/" target="_blank" rel="noreferrer" data-copy-phone="79255054506" aria-label="Написать в MAX" title="MAX — номер скопируется"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 5.5h13v10h-7l-4.5 3v-3H5.5z"/><path d="m8.5 13 1-5 2.5 3.4L14.5 8l1 5"/></svg><span class="sr-only">MAX</span></a>
-  <a class="messenger-link" href="https://wa.me/79255054506?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20BMW%20%D0%A2%D0%B5%D1%80%D1%80%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D1%8F." target="_blank" rel="noreferrer" aria-label="Написать в WhatsApp" title="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19.2 6.2 16A7.8 7.8 0 1 1 9 18.3z"/><path d="M9 8.4c.3 2.8 2 4.7 4.7 5.5l1.2-1.3 2 .9c-.2 1.5-1.2 2.3-2.6 2.3-3.8-.4-6.8-3.3-7.1-7 0-1.4.8-2.4 2.3-2.6l.9 2z"/></svg><span class="sr-only">WhatsApp</span></a>
-  <a class="messenger-link" href="https://t.me/+79255054506" target="_blank" rel="noreferrer" aria-label="Написать в Telegram" title="Telegram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 11.5 15.5-6-3 13-5-4-3 2.5.7-4.4z"/><path d="m9.2 12.6 6.6-4.2-4.3 6"/></svg><span class="sr-only">Telegram</span></a>`;
+  <a class="messenger-link" href="https://max.ru/" target="_blank" rel="noreferrer" data-copy-phone="79255054506" aria-label="Написать в MAX" title="MAX — номер скопируется"><svg class="messenger-icon messenger-icon--max" viewBox="0 0 100 100" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M50.757 0.262c27.536 0 49.129 22.335 49.129 49.885 0 27.55-22.279 49.343-48.865 49.343-9.435 0-14.007-1.328-21.371-6.543a1.3 1.3 0 0 0-1.629.193c-5.664 6.043-20.171 10.286-20.835 2.036 0-14.386-7.186-23.729-7.186-45.3C0 21.555 23.221.262 50.757.262Zm.772 24.55C38.464 24.126 28.264 33.197 26.014 47.383c-1.864 11.75 1.436 26.071 4.265 26.793 1.2.307 4.078-1.9 6.178-3.879a1.2 1.2 0 0 1 1.45-.15c3.272 2 6.972 3.5 11.05 3.715 13.414.7 25.3-9.8 26.007-23.215.7-13.414-10.021-25.143-23.435-25.843v.008Z"/></svg><span class="sr-only">MAX</span></a>
+  <a class="messenger-link" href="https://wa.me/79255054506?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20BMW%20%D0%A2%D0%B5%D1%80%D1%80%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D1%8F." target="_blank" rel="noreferrer" aria-label="Написать в WhatsApp" title="WhatsApp"><svg class="messenger-icon messenger-icon--whatsapp" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg><span class="sr-only">WhatsApp</span></a>
+  <a class="messenger-link" href="https://t.me/+79255054506" target="_blank" rel="noreferrer" aria-label="Написать в Telegram" title="Telegram"><svg class="messenger-icon messenger-icon--telegram" viewBox="0 0 512 512" aria-hidden="true"><path d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6L284 427.7l-68.5 74.1c-8.9 9.7-22.9 12.9-35.2 8.1S160 493.2 160 480v-83.6c0-4 1.5-7.8 4.2-10.8l167.6-182.8c5.8-6.3 5.6-16-.4-22s-15.7-6.4-22-.7L106 360.8l-88.3-44.2C7.1 311.3.3 300.7 0 288.9s5.9-22.8 16.1-28.7l448-256c10.7-6.1 23.9-5.5 34 1.4Z"/></svg><span class="sr-only">Telegram</span></a>`;
+
+const structuredData = document.createElement('script');
+structuredData.type = 'application/ld+json';
+structuredData.textContent = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Service',
+      name: service.shortTitle,
+      serviceType: service.title.join(' '),
+      url: `https://bmw-territory.ru/services/${serviceKey}.html`,
+      provider: {
+        '@type': 'AutoRepair',
+        name: 'BMW Территория',
+        url: 'https://bmw-territory.ru/',
+        telephone: '+7-925-505-45-06',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'ул. Ермакова Роща, 7А, стр. 1',
+          addressLocality: 'Москва',
+          addressCountry: 'RU',
+        },
+      },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Главная', item: 'https://bmw-territory.ru/' },
+        { '@type': 'ListItem', position: 2, name: 'Услуги', item: 'https://bmw-territory.ru/#services' },
+        { '@type': 'ListItem', position: 3, name: service.shortTitle, item: `https://bmw-territory.ru/services/${serviceKey}.html` },
+      ],
+    },
+  ],
+});
+document.head.append(structuredData);
 
 const renderRelated = (key) => {
   const item = serviceCatalog[key];
@@ -292,11 +327,11 @@ app.innerHTML = `
       </div>
       <div class="service-detail-hero__visual">
         <img src="${service.image}" alt="${service.shortTitle} BMW" />
-        <div class="service-detail-hero__visual-top"><span>BMW CARE SYSTEM</span><b>${service.number}</b></div>
-        <div class="service-detail-hero__visual-bottom"><span>WORKSHOP ARCHIVE</span><b>${service.code}</b></div>
+        <div class="service-detail-hero__visual-top"><span>ПРОФИЛЬНЫЙ СЕРВИС BMW</span><b>${service.number}</b></div>
+        <div class="service-detail-hero__visual-bottom"><span>ИЗ ПРАКТИКИ</span><b>${service.code}</b></div>
         <div class="service-scanline" aria-hidden="true"></div>
       </div>
-      <div class="service-detail-hero__rail"><span>${service.number}</span><i></i><em>КРУТИТЕ ВНИЗ</em></div>
+      <div class="service-detail-hero__rail"><span>${service.number}</span><i></i><em>ЛИСТАЙТЕ</em></div>
     </section>
 
     <section class="service-overview detail-section">
@@ -324,7 +359,7 @@ app.innerHTML = `
         <h2 class="reveal">ЧЕТЫРЕ ЭТАПА.<br /><span>НИ ОДНОГО СЛУЧАЙНОГО.</span></h2>
       </div>
       <div class="service-protocol__steps">
-        ${service.protocol.map((item, index) => `<article class="protocol-step reveal-card"><div><span>0${index + 1}</span><small>${index === 3 ? 'RESULT' : 'PROCESS'}</small></div><h3>${item[0]}</h3><p>${item[1]}</p></article>`).join('')}
+        ${service.protocol.map((item, index) => `<article class="protocol-step reveal-card"><div><span>0${index + 1}</span><small>${index === 3 ? 'РЕЗУЛЬТАТ' : 'ЭТАП'}</small></div><h3>${item[0]}</h3><p>${item[1]}</p></article>`).join('')}
       </div>
     </section>
 
@@ -337,7 +372,7 @@ app.innerHTML = `
       <div class="service-result__facts reveal">
         <div><strong>2006</strong><span>ПРОФИЛЬНО<br />С BMW</span></div>
         <div><strong>1997</strong><span>РАБОТАЕТ<br />СЕРВИС</span></div>
-        <div><strong>100%</strong><span>СОГЛАСОВАНИЕ<br />ДО РАБОТ</span></div>
+        <div><strong>ПЛАН</strong><span>СОГЛАСУЕМ<br />ДО РАБОТ</span></div>
       </div>
     </section>
 
@@ -372,7 +407,7 @@ app.innerHTML = `
     <a class="brand page-link" href="../index.html#home"><span class="brand__roundel"><b>BT</b></span><span class="brand__text"><strong>BMW ТЕРРИТОРИЯ</strong><small>СЕРВИС 1997 · BMW 2006</small></span></a>
     <p>Москва, ул. Ермакова Роща, 7А, стр. 1<br />Пн–Пт, 10:00–20:00</p>
     <p>Независимый профильный сервис.<br />Не является официальным дилером BMW AG.</p>
-    <div class="service-footer__meta"><a href="../privacy.html">ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ</a><span>© 2026</span></div>
+    <div class="service-footer__meta"><span>ООО «Амитэкс-М»<br />ИНН 7714761130 · ОГРН 5087746582985</span><small>Meta Platforms Inc. признана экстремистской организацией; решение суда не распространяется на WhatsApp.</small><a href="../privacy.html">ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ</a><span>© 2026</span></div>
   </footer>
 `;
 

@@ -157,9 +157,9 @@ body.is-loaded .hero-car { animation-play-state: running; }
 @keyframes carEnter { to { opacity: 1; transform: translate(0, -42%); } }
 .hero-car__svg { display: block; width: 100%; overflow: visible; filter: drop-shadow(0 30px 38px rgba(14,44,64,.28)); transition: transform .18s ease-out; }
 .hero-car__legacy { display: none !important; }
-.hero-car--photo { width: min(57vw, 990px); right: 1.5vw; top: 51%; }
+.hero-car--photo { width: min(59vw, 1040px); right: .5vw; top: 51%; }
 .hero-car--photo::before { content: ""; position: absolute; z-index: 0; inset: -14px 16px 15px -18px; background: linear-gradient(135deg, rgba(13,126,203,.2), rgba(255,255,255,.08)); border: 1px solid rgba(20,111,169,.18); clip-path: polygon(8% 0, 100% 0, 100% 84%, 92% 100%, 0 100%, 0 18%); }
-.hero-car--photo .hero-car__svg { position: relative; z-index: 1; aspect-ratio: 2.47 / 1; object-fit: cover; object-position: center 52%; clip-path: polygon(8% 0, 100% 0, 100% 84%, 92% 100%, 0 100%, 0 18%); filter: saturate(.9) contrast(1.08) brightness(1.04) drop-shadow(0 30px 38px rgba(14,44,64,.2)); }
+.hero-car--photo .hero-car__svg { position: relative; z-index: 1; aspect-ratio: 1693 / 929; object-fit: cover; object-position: center; clip-path: polygon(8% 0, 100% 0, 100% 84%, 92% 100%, 0 100%, 0 18%); filter: saturate(.92) contrast(1.04) brightness(1.03) drop-shadow(0 30px 38px rgba(14,44,64,.2)); }
 .hero-car--photo .hero-car__meta--bottom { bottom: 8%; color: #f3f9fc; text-shadow: 0 1px 10px rgba(2,18,29,.9); }
 .hero-car__meta { position: absolute; z-index: 2; display: flex; color: #426071; font: 500 8px/1 var(--font-mono); letter-spacing: .16em; }
 .hero-car__meta--top { top: 2%; left: 29%; right: 10%; justify-content: space-between; align-items: center; }

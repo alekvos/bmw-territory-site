@@ -15,3 +15,4 @@ assets/service-photos/source-06.jpg
 assets/service-photos/source-09.jpg
 dist/
 tmp/
+.preview/

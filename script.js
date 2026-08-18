@@ -212,12 +212,25 @@ document.querySelectorAll('[data-copy-phone]').forEach((link) => {
 
 bookingForm.addEventListener('submit', (event) => {
   event.preventDefault();
+  const formData = new FormData(bookingForm);
+  const value = (name) => String(formData.get(name) || '').trim();
+  const message = [
+    'Здравствуйте! Заявка с сайта BMW Территория.',
+    '',
+    `Имя: ${value('name')}`,
+    `Телефон: ${value('phone')}`,
+    `Автомобиль: ${value('car')}`,
+    value('model') ? `Модель / год: ${value('model')}` : '',
+    value('message') ? `Что нужно сделать: ${value('message')}` : '',
+  ]
+    .filter(Boolean)
+    .join('\n');
+  const whatsappUrl = `https://wa.me/79255054506?text=${encodeURIComponent(message)}`;
   const success = bookingForm.querySelector('.form-success');
   success.classList.add('is-visible');
   window.setTimeout(() => {
-    success.classList.remove('is-visible');
-    bookingForm.reset();
-  }, 3200);
+    window.location.href = whatsappUrl;
+  }, 220);
 });
 
 const phoneInput = document.querySelector('input[name="phone"]');

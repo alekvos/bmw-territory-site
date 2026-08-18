@@ -186,7 +186,7 @@ body.is-loaded:not(.car-arrived) .car-wheel .wheel-spokes { animation: wheelArri
 .scroll-cue i { position: absolute; top: 8px; left: 50%; width: 2px; height: 7px; background: var(--blue-bright); transform: translateX(-50%); animation: scrollCue 1.8s ease infinite; }
 @keyframes scrollCue { 0% { opacity: 0; transform: translate(-50%,0); } 35% { opacity: 1; } 100% { opacity: 0; transform: translate(-50%,14px); } }
 
-.ticker { position: relative; z-index: 5; height: 68px; overflow: hidden; background: var(--blue); display: flex; align-items: center; transform: rotate(-.35deg) scale(1.01); box-shadow: 0 15px 40px rgba(0,91,160,.2); }
+.ticker { position: relative; z-index: 5; width: calc(100% - 8px); height: 68px; margin-inline: 4px; overflow: hidden; background: var(--blue); display: flex; align-items: center; transform: rotate(-.35deg); box-shadow: 0 15px 40px rgba(0,91,160,.2); }
 .ticker__track { width: max-content; display: flex; align-items: center; gap: 36px; animation: ticker 28s linear infinite; }
 .ticker span { white-space: nowrap; font: 600 11px/1 var(--font-display); letter-spacing: .1em; }
 .ticker i { width: 7px; height: 7px; border: 1px solid white; border-radius: 50%; }
@@ -253,7 +253,7 @@ body.is-loaded:not(.car-arrived) .car-wheel .wheel-spokes { animation: wheelArri
 .secondary-brand > a { color: #24313b; font: 600 8px/1 var(--font-display); letter-spacing: .07em; }
 .secondary-brand > a span { margin-left: 10px; color: var(--blue); }
 
-.approach { display: grid; grid-template-columns: 38% 62%; gap: 8vw; background: radial-gradient(circle at 90% 16%, rgba(17,119,198,.17), transparent 34%), linear-gradient(135deg, #111820, #07111b); }
+.approach { display: grid; grid-template-columns: minmax(0, 38fr) minmax(0, 62fr); gap: 8vw; background: radial-gradient(circle at 90% 16%, rgba(17,119,198,.17), transparent 34%), linear-gradient(135deg, #111820, #07111b); }
 .approach__sticky { position: sticky; top: 120px; align-self: start; }
 .approach h2 { margin-top: 55px; font-size: clamp(39px, 4.4vw, 78px); }
 .approach__sticky > p { max-width: 410px; margin: 30px 0 0; color: #84909a; font-size: 15px; line-height: 1.7; }
@@ -306,7 +306,7 @@ body.is-loaded:not(.car-arrived) .car-wheel .wheel-spokes { animation: wheelArri
 
 .booking { background: #e9edef; color: #101419; overflow: hidden; }
 .booking__beam { position: absolute; width: 26vw; height: 150%; top: -25%; left: 44%; background: linear-gradient(90deg, transparent, rgba(7,108,181,.08), transparent); transform: rotate(18deg); }
-.booking__grid { display: grid; grid-template-columns: 38% 62%; gap: 8vw; margin-top: 55px; }
+.booking__grid { display: grid; grid-template-columns: minmax(0, 38fr) minmax(0, 62fr); gap: 8vw; margin-top: 55px; }
 .booking__copy { align-self: start; }
 .booking__copy > p { max-width: 390px; margin: 30px 0 60px; color: #68737c; line-height: 1.65; }
 .booking__contact { display: flex; flex-direction: column; gap: 12px; }

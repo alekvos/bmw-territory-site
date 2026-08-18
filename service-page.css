@@ -128,7 +128,7 @@
 .service-result__facts span { color: #87939d; text-align: right; font: 500 7px/1.5 var(--font-mono); letter-spacing: .13em; }
 
 .service-faq { background: #0b0e12; }
-.service-faq__layout { display: grid; grid-template-columns: 38% 62%; gap: 8vw; margin-top: 62px; }
+.service-faq__layout { display: grid; grid-template-columns: minmax(0, 38fr) minmax(0, 62fr); gap: 8vw; margin-top: 62px; }
 .service-faq__layout > div:first-child > p { max-width: 310px; margin: 30px 0 0; color: #75818b; font-size: 14px; line-height: 1.7; }
 .service-faq__items { border-top: 1px solid var(--line); }
 .faq-item { border-bottom: 1px solid var(--line); }

@@ -78,9 +78,10 @@ body.is-loaded .page-loader { opacity: 0; visibility: hidden; }
 .desktop-nav a:hover::after, .desktop-nav a.active::after { right: 0; }
 .header-actions { display: flex; align-items: center; gap: 16px; }
 .header-contact { min-width: 220px; display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
-.header-messengers { display: flex; align-items: center; justify-content: flex-end; gap: 8px; color: #c5d2dc; }
-.messenger-link { width: 32px; height: 32px; display: inline-grid; place-items: center; border: 1px solid rgba(197,210,220,.42); border-radius: 50%; color: inherit; background: rgba(255,255,255,.025); transition: color .25s, border-color .25s, background .25s, transform .25s; }
-.messenger-link svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 1.45; stroke-linecap: round; stroke-linejoin: round; }
+.header-messengers { display: flex; align-items: center; justify-content: flex-end; gap: 10px; color: #c5d2dc; }
+.messenger-link { width: 40px; height: 40px; display: inline-grid; place-items: center; border: 1px solid rgba(197,210,220,.48); border-radius: 50%; color: inherit; background: rgba(255,255,255,.045); transition: color .25s, border-color .25s, background .25s, transform .25s; }
+.messenger-link svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
+.messenger-link .messenger-icon--max { width: 21px; height: 21px; fill: currentColor; stroke: none; }
 .messenger-link:hover { color: var(--blue-bright); border-color: currentColor; background: rgba(43,169,255,.08); transform: translateY(-2px); }
 .header-phone { text-align: right; display: flex; align-items: baseline; gap: 10px; }
 .header-phone small { color: #687581; font: 500 10px/1 var(--font-mono); letter-spacing: .1em; }
@@ -107,8 +108,9 @@ body.is-loaded .page-loader { opacity: 0; visibility: hidden; }
 .mobile-contacts { margin-top: 30px; padding-top: 24px; border-top: 1px solid var(--line); }
 .mobile-phone { display: block; margin-bottom: 18px; font: 500 17px/1 var(--font-mono); }
 .header-messengers--mobile { justify-content: flex-start; gap: 12px; }
-.header-messengers--mobile .messenger-link { width: 40px; height: 40px; }
-.header-messengers--mobile .messenger-link svg { width: 20px; height: 20px; }
+.header-messengers--mobile .messenger-link { width: 48px; height: 48px; }
+.header-messengers--mobile .messenger-link svg { width: 25px; height: 25px; }
+.header-messengers--mobile .messenger-link .messenger-icon--max { width: 24px; height: 24px; }
 .mobile-menu .button { width: 100%; margin-top: 32px; }
 
 .home-page .site-header { color: #111b24; border-bottom-color: rgba(15,42,62,.1); background: rgba(244,249,252,.72); }

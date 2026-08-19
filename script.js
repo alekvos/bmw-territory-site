@@ -197,6 +197,14 @@ const bookingForm = document.querySelector('#bookingForm');
 const requestedService = new URLSearchParams(window.location.search).get('service');
 const whatsappLink = bookingForm.querySelector('[data-whatsapp-link]');
 const formBackButton = bookingForm.querySelector('[data-form-back]');
+const formResult = bookingForm.querySelector('[data-form-result]');
+const resultKicker = bookingForm.querySelector('[data-result-kicker]');
+const resultTitle = bookingForm.querySelector('[data-result-title]');
+const resultText = bookingForm.querySelector('[data-result-text]');
+const submitButton = bookingForm.querySelector('[data-submit-button]');
+const submitLabel = bookingForm.querySelector('[data-submit-label]');
+let formStartedAt = Date.now();
+let formIsSubmitting = false;
 
 if (requestedService) {
   const requestField = bookingForm.querySelector('textarea[name="message"]');
@@ -268,14 +276,7 @@ phoneInput.addEventListener('input', (event) => {
 
 phoneInput.addEventListener('blur', () => validatePhone(true));
 
-bookingForm.addEventListener('submit', (event) => {
-  event.preventDefault();
-  if (!validatePhone(true)) {
-    phoneInput.focus();
-    bookingForm.reportValidity();
-    return;
-  }
-  const formData = new FormData(bookingForm);
+const buildWhatsAppUrl = (formData) => {
   const value = (name) => String(formData.get(name) || '').trim();
   const message = [
     'Здравствуйте! Заявка с сайта BMW Территория.',
@@ -288,14 +289,81 @@ bookingForm.addEventListener('submit', (event) => {
   ]
     .filter(Boolean)
     .join('\n');
-  const whatsappUrl = `https://api.whatsapp.com/send/?phone=79255054506&text=${encodeURIComponent(message)}&type=phone_number&app_absent=0`;
-  const success = bookingForm.querySelector('.form-success');
+  return `https://api.whatsapp.com/send/?phone=79255054506&text=${encodeURIComponent(message)}&type=phone_number&app_absent=0`;
+};
+
+const setSubmitting = (isSubmitting) => {
+  formIsSubmitting = isSubmitting;
+  bookingForm.classList.toggle('is-submitting', isSubmitting);
+  submitButton.disabled = isSubmitting;
+  submitLabel.textContent = isSubmitting ? 'ОТПРАВЛЯЕМ…' : 'ОТПРАВИТЬ ЗАЯВКУ';
+};
+
+const showFormResult = ({ success, name = '' }) => {
+  formResult.classList.toggle('is-success', success);
+  formResult.classList.toggle('is-error', !success);
+  resultKicker.textContent = success ? 'ЗАЯВКА ОТПРАВЛЕНА' : 'НЕ УДАЛОСЬ ОТПРАВИТЬ';
+  resultTitle.textContent = success ? `Спасибо${name ? `, ${name}` : ''}!` : 'Давайте другим способом';
+  resultText.textContent = success
+    ? 'Мы получили ваше обращение и свяжемся с вами по указанному номеру.'
+    : 'Сейчас почтовая отправка недоступна. Сообщение для WhatsApp уже подготовлено — останется нажать «Отправить».';
+  whatsappLink.hidden = success;
+  formBackButton.textContent = success ? 'ОТПРАВИТЬ ЕЩЁ' : 'ИЗМЕНИТЬ ДАННЫЕ';
+  formResult.classList.add('is-visible');
+  window.setTimeout(() => formResult.focus({ preventScroll: true }), 50);
+};
+
+bookingForm.addEventListener('submit', async (event) => {
+  event.preventDefault();
+  if (formIsSubmitting) return;
+  if (!validatePhone(true)) {
+    phoneInput.focus();
+    bookingForm.reportValidity();
+    return;
+  }
+  const formData = new FormData(bookingForm);
+  const value = (name) => String(formData.get(name) || '').trim();
+  const whatsappUrl = buildWhatsAppUrl(formData);
   whatsappLink.href = whatsappUrl;
-  success.classList.add('is-visible');
-  window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+  setSubmitting(true);
+
+  const controller = new AbortController();
+  const timeout = window.setTimeout(() => controller.abort(), 9000);
+  try {
+    const response = await fetch('/api/booking', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      credentials: 'same-origin',
+      cache: 'no-store',
+      signal: controller.signal,
+      body: JSON.stringify({
+        name: value('name'),
+        phone: value('phone'),
+        car: value('car'),
+        model: value('model'),
+        message: value('message'),
+        consent: formData.get('personal_data_consent') === 'on',
+        website: value('website'),
+        startedAt: formStartedAt,
+      }),
+    });
+
+    if (!response.ok) throw new Error(`Booking API returned ${response.status}`);
+    showFormResult({ success: true, name: value('name') });
+    bookingForm.reset();
+    phoneInput.setAttribute('aria-invalid', 'false');
+    phoneError?.classList.remove('is-visible');
+    formStartedAt = Date.now();
+  } catch {
+    showFormResult({ success: false });
+  } finally {
+    window.clearTimeout(timeout);
+    setSubmitting(false);
+  }
 });
 
 formBackButton.addEventListener('click', () => {
-  bookingForm.querySelector('.form-success').classList.remove('is-visible');
+  formResult.classList.remove('is-visible', 'is-success', 'is-error');
+  formStartedAt = Date.now();
   bookingForm.querySelector('input[name="name"]').focus();
 });

@@ -332,14 +332,22 @@ body.is-loaded:not(.car-arrived) .car-wheel .wheel-spokes { animation: wheelArri
 .consent small { max-width: 330px; color: #66727b; font-size: 12px; line-height: 1.5; }
 .consent small a { color: #0a6fac; text-decoration: underline; text-decoration-color: rgba(10,111,172,.35); text-underline-offset: 2px; }
 .consent small a:hover { text-decoration-color: currentColor; }
-.form-success { position: absolute; z-index: 5; inset: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 36px; color: white; text-align: center; background: linear-gradient(135deg, #0877cf, #0764ad); opacity: 0; visibility: hidden; transition: opacity .35s, visibility .35s; }
+.form-trap { position: absolute !important; left: -10000px !important; width: 1px !important; height: 1px !important; overflow: hidden !important; opacity: 0 !important; pointer-events: none !important; }
+.booking-form.is-submitting::after { content: ""; position: absolute; z-index: 4; inset: 0; background: rgba(238,246,250,.34); cursor: progress; }
+.booking-form button:disabled { cursor: progress; filter: saturate(.65); }
+.form-success { position: absolute; z-index: 5; inset: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 36px; color: white; text-align: center; background: linear-gradient(135deg, #0877cf, #0764ad); opacity: 0; visibility: hidden; transition: opacity .35s, visibility .35s, background .35s; }
+.form-success.is-error { background: radial-gradient(circle at 82% 20%, rgba(37,153,226,.25), transparent 34%), linear-gradient(135deg, #112a3b, #071927); }
 .form-success.is-visible { opacity: 1; visibility: visible; }
 .form-success > small { color: #b9e4ff; font: 600 9px/1 var(--font-mono); letter-spacing: .18em; }
 .form-success > strong { margin-top: 18px; font: 600 clamp(22px, 2vw, 30px)/1.1 var(--font-display); }
 .form-success > p { max-width: 430px; margin: 14px 0 26px; color: #d4efff; font-size: 14px; line-height: 1.55; }
+.form-success__actions { display: flex; flex-direction: column; align-items: center; gap: 16px; }
 .form-success__open { min-width: 230px; border-color: white; background: white; color: #082339; }
+.form-success__open[hidden] { display: none; }
 .form-success__open::before { background: #071019; }
 .form-success__open:hover { color: white; border-color: #071019; }
+.form-success__phone { color: #d7efff; font: 600 10px/1.2 var(--font-mono); letter-spacing: .08em; border-bottom: 1px solid rgba(255,255,255,.35); }
+.form-success__phone:hover { color: white; border-color: white; }
 .form-success__back { margin-top: 20px; padding: 5px 0; border: 0; border-bottom: 1px solid rgba(255,255,255,.42); color: #d7eeff; background: none; font: 600 9px/1 var(--font-mono); letter-spacing: .12em; cursor: pointer; }
 .form-success__back:hover { color: white; border-color: white; }
 

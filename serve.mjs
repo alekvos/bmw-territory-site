@@ -1,4 +1,4 @@
-import { createServer } from "node:http";
+import { createServer, request as httpRequest } from "node:http";
 import { readFile, stat } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -19,6 +19,26 @@ const mimeTypes = {
 createServer(async (request, response) => {
   try {
     const requestPath = decodeURIComponent(new URL(request.url, `http://${request.headers.host}`).pathname);
+
+    if (requestPath === "/api/booking") {
+      const proxy = httpRequest({
+        hostname: "127.0.0.1",
+        port: 8787,
+        path: requestPath,
+        method: request.method,
+        headers: request.headers,
+      }, (proxyResponse) => {
+        response.writeHead(proxyResponse.statusCode || 502, proxyResponse.headers);
+        proxyResponse.pipe(response);
+      });
+      proxy.on("error", () => {
+        response.writeHead(503, { "Content-Type": "application/json; charset=utf-8", "Cache-Control": "no-store" });
+        response.end(JSON.stringify({ ok: false, code: "MAIL_NOT_CONFIGURED" }));
+      });
+      request.pipe(proxy);
+      return;
+    }
+
     let filePath = path.resolve(root, `.${requestPath}`);
 
     if (!filePath.startsWith(root)) throw new Error("Invalid path");

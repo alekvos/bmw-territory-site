@@ -16,3 +16,8 @@ assets/service-photos/source-09.jpg
 dist/
 tmp/
 .preview/
+server/node_modules/
+server/booking.env
+.env
+.env.*
+!*.env.example

@@ -529,6 +529,7 @@
           </div>
 
           <form class="booking-form reveal-card" id="bookingForm">
+            <label class="form-trap" aria-hidden="true">Ваш сайт<input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
             <div class="form-row">
               <label><span>ВАШЕ ИМЯ</span><input type="text" name="name" placeholder="Александр" autocomplete="name" required /></label>
               <label><span>ТЕЛЕФОН</span><input type="tel" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" inputmode="tel" aria-describedby="phoneError" required /><small class="field-error" id="phoneError">Укажите номер полностью — 11 цифр.</small></label>
@@ -545,18 +546,21 @@
               <label class="consent">
                 <input type="checkbox" name="personal_data_consent" required />
                 <span aria-hidden="true"></span>
-                <small>Даю <a href="./consent" target="_blank">согласие на обработку данных</a> и ознакомлен с <a href="./privacy" target="_blank">Политикой</a>. После нажатия откроется WhatsApp — сообщение отправляете вы.</small>
+                <small>Даю <a href="./consent" target="_blank">согласие на обработку данных</a> и ознакомлен с <a href="./privacy" target="_blank">Политикой</a>. Заявка будет отправлена администрации сервиса.</small>
               </label>
-              <button class="button button--primary" type="submit"><span>ПЕРЕЙТИ В WHATSAPP</span><svg viewBox="0 0 18 18"><path d="M4 9h10M10 5l4 4-4 4" /></svg></button>
+              <button class="button button--primary" type="submit" data-submit-button><span data-submit-label>ОТПРАВИТЬ ЗАЯВКУ</span><svg viewBox="0 0 18 18"><path d="M4 9h10M10 5l4 4-4 4" /></svg></button>
             </div>
-            <div class="form-success" aria-live="polite">
-              <small>ЗАЯВКА ПОДГОТОВЛЕНА</small>
-              <strong>Откройте WhatsApp</strong>
-              <p>Сообщение уже собрано. В чате останется нажать «Отправить».</p>
-              <a class="button form-success__open" href="https://wa.me/79255054506" target="_blank" rel="noopener noreferrer" data-whatsapp-link>
-                <span>ОТКРЫТЬ ЧАТ</span><svg viewBox="0 0 18 18"><path d="M4 9h10M10 5l4 4-4 4" /></svg>
-              </a>
-              <button class="form-success__back" type="button" data-form-back>ИЗМЕНИТЬ ДАННЫЕ</button>
+            <div class="form-success" aria-live="polite" tabindex="-1" data-form-result>
+              <small data-result-kicker>ЗАЯВКА ОТПРАВЛЕНА</small>
+              <strong data-result-title>Спасибо!</strong>
+              <p data-result-text>Мы получили ваше обращение и свяжемся с вами по указанному номеру.</p>
+              <div class="form-success__actions">
+                <a class="button form-success__open" href="https://wa.me/79255054506" target="_blank" rel="noopener noreferrer" data-whatsapp-link hidden>
+                  <span>ОТПРАВИТЬ В WHATSAPP</span><svg viewBox="0 0 18 18"><path d="M4 9h10M10 5l4 4-4 4" /></svg>
+                </a>
+                <a class="form-success__phone" href="tel:+79255054506">ИЛИ ПОЗВОНИТЬ: +7 (925) 505-45-06</a>
+              </div>
+              <button class="form-success__back" type="button" data-form-back>ОТПРАВИТЬ ЕЩЁ</button>
             </div>
           </form>
         </div>

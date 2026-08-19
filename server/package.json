@@ -1,0 +1,13 @@
+{
+  "name": "bmw-territory-booking-service",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node booking-service.mjs",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "nodemailer": "9.0.5"
+  }
+}

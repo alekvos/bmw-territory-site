@@ -195,6 +195,8 @@ if (window.matchMedia('(pointer: fine)').matches && !window.matchMedia('(prefers
 
 const bookingForm = document.querySelector('#bookingForm');
 const requestedService = new URLSearchParams(window.location.search).get('service');
+const whatsappLink = bookingForm.querySelector('[data-whatsapp-link]');
+const formBackButton = bookingForm.querySelector('[data-form-back]');
 
 if (requestedService) {
   const requestField = bookingForm.querySelector('textarea[name="message"]');
@@ -286,10 +288,14 @@ bookingForm.addEventListener('submit', (event) => {
   ]
     .filter(Boolean)
     .join('\n');
-  const whatsappUrl = `https://wa.me/79255054506?text=${encodeURIComponent(message)}`;
+  const whatsappUrl = `https://api.whatsapp.com/send/?phone=79255054506&text=${encodeURIComponent(message)}&type=phone_number&app_absent=0`;
   const success = bookingForm.querySelector('.form-success');
+  whatsappLink.href = whatsappUrl;
   success.classList.add('is-visible');
-  window.setTimeout(() => {
-    window.location.href = whatsappUrl;
-  }, 320);
+  window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+});
+
+formBackButton.addEventListener('click', () => {
+  bookingForm.querySelector('.form-success').classList.remove('is-visible');
+  bookingForm.querySelector('input[name="name"]').focus();
 });

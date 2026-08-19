@@ -10,7 +10,7 @@
     <meta name="theme-color" content="#080a0d" />
     <title>BMW Территория — сервис с 1997 года, профиль BMW с 2006 года</title>
     <link rel="canonical" href="https://bmw-territory.ru/" />
-    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="./assets/favicon.svg?v=2" type="image/svg+xml" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="ru_RU" />
     <meta property="og:site_name" content="BMW Территория" />
@@ -549,7 +549,15 @@
               </label>
               <button class="button button--primary" type="submit"><span>ПЕРЕЙТИ В WHATSAPP</span><svg viewBox="0 0 18 18"><path d="M4 9h10M10 5l4 4-4 4" /></svg></button>
             </div>
-            <div class="form-success" aria-live="polite"><strong>Открываем WhatsApp</strong><span>Проверьте сообщение и нажмите «Отправить».</span></div>
+            <div class="form-success" aria-live="polite">
+              <small>ЗАЯВКА ПОДГОТОВЛЕНА</small>
+              <strong>Откройте WhatsApp</strong>
+              <p>Сообщение уже собрано. В чате останется нажать «Отправить».</p>
+              <a class="button form-success__open" href="https://wa.me/79255054506" target="_blank" rel="noopener noreferrer" data-whatsapp-link>
+                <span>ОТКРЫТЬ ЧАТ</span><svg viewBox="0 0 18 18"><path d="M4 9h10M10 5l4 4-4 4" /></svg>
+              </a>
+              <button class="form-success__back" type="button" data-form-back>ИЗМЕНИТЬ ДАННЫЕ</button>
+            </div>
           </form>
         </div>
       </section>

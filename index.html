@@ -110,8 +110,8 @@
             <span>+7 (925) 505-45-06</span>
           </a>
         </div>
-        <a class="button button--compact nav-link" href="#booking" data-section-name="ЗАПИСЬ">
-          <span>ЗАПИСАТЬСЯ</span>
+        <a class="button button--compact nav-link" href="#direct-contact" data-section-name="СВЯЗЬ">
+          <span>СВЯЗАТЬСЯ</span>
           <svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4 9h10M10 5l4 4-4 4" /></svg>
         </a>
       </div>
@@ -136,7 +136,7 @@
           <a class="messenger-link" href="https://t.me/+79255054506" target="_blank" rel="noreferrer" aria-label="Написать в Telegram"><svg class="messenger-icon messenger-icon--telegram" viewBox="0 0 512 512" aria-hidden="true"><path d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6L284 427.7l-68.5 74.1c-8.9 9.7-22.9 12.9-35.2 8.1S160 493.2 160 480v-83.6c0-4 1.5-7.8 4.2-10.8l167.6-182.8c5.8-6.3 5.6-16-.4-22s-15.7-6.4-22-.7L106 360.8l-88.3-44.2C7.1 311.3.3 300.7 0 288.9s5.9-22.8 16.1-28.7l448-256c10.7-6.1 23.9-5.5 34 1.4Z"/></svg><span class="sr-only">Telegram</span></a>
         </div>
       </div>
-      <a class="button nav-link" href="#booking" data-section-name="ЗАПИСЬ">ЗАПИСАТЬСЯ</a>
+      <a class="button nav-link" href="#direct-contact" data-section-name="СВЯЗЬ">СВЯЗАТЬСЯ</a>
     </div>
 
     <main>
@@ -163,8 +163,8 @@
           </div>
 
           <div class="hero__actions reveal">
-            <a class="button button--primary nav-link" href="#booking" data-section-name="ЗАПИСЬ">
-              <span>ЗАПИСАТЬСЯ В СЕРВИС</span>
+            <a class="button button--primary nav-link" href="#direct-contact" data-section-name="СВЯЗЬ">
+              <span>СВЯЗАТЬСЯ С СЕРВИСОМ</span>
               <svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4 9h10M10 5l4 4-4 4" /></svg>
             </a>
             <a class="text-link nav-link" href="#services" data-section-name="УСЛУГИ">
@@ -428,7 +428,7 @@
           <div class="secondary-brand__icon">✦</div>
           <div><span>ТАКЖЕ РАБОТАЕМ С</span><strong>MERCEDES-BENZ</strong></div>
           <p>Профильное обслуживание и ремонт — по тем же высоким стандартам команды.</p>
-          <a href="#booking" class="nav-link" data-section-name="ЗАПИСЬ">УТОЧНИТЬ ПО МОДЕЛИ <span>→</span></a>
+          <a href="#direct-contact" class="nav-link" data-section-name="СВЯЗЬ">УТОЧНИТЬ ПО МОДЕЛИ <span>→</span></a>
         </div>
       </section>
 
@@ -515,54 +515,31 @@
         </div>
       </section>
 
-      <section class="booking section" id="booking">
-        <div class="booking__beam" aria-hidden="true"></div>
-        <div class="section-kicker reveal"><span>04</span><i></i><em>ЗАПИСЬ</em></div>
-        <div class="booking__grid">
-          <div class="booking__copy">
-            <h2 class="reveal">РАССКАЖИТЕ,<br />ЧТО <span>БЕСПОКОИТ</span></h2>
-            <p class="reveal">Перезвоним, зададим несколько точных вопросов и предложим удобное время для визита.</p>
-            <div class="booking__contact reveal">
-              <small>ИЛИ ПОЗВОНИТЕ НАМ</small>
-              <a href="tel:+79255054506">+7 (925) 505-45-06</a>
-            </div>
+      <section class="direct-contact section" id="direct-contact">
+        <div class="direct-contact__beam" aria-hidden="true"></div>
+        <div class="section-kicker reveal"><span>04</span><i></i><em>ПРЯМАЯ СВЯЗЬ</em></div>
+        <div class="direct-contact__grid">
+          <div class="direct-contact__copy">
+            <h2 class="reveal">ОБСУДИМ<br />ВАШ <span>АВТОМОБИЛЬ</span></h2>
+            <p class="reveal">Позвоните или напишите напрямую — мастер уточнит симптомы, сориентирует по первому шагу и согласует время визита.</p>
           </div>
 
-          <form class="booking-form reveal-card" id="bookingForm">
-            <label class="form-trap" aria-hidden="true">Ваш сайт<input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
-            <div class="form-row">
-              <label><span>ВАШЕ ИМЯ</span><input type="text" name="name" placeholder="Александр" autocomplete="name" required /></label>
-              <label><span>ТЕЛЕФОН</span><input type="tel" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" inputmode="tel" aria-describedby="phoneError" required /><small class="field-error" id="phoneError">Укажите номер полностью — 11 цифр.</small></label>
-            </div>
-            <div class="form-row">
-              <label>
-                <span>АВТОМОБИЛЬ</span>
-                <select name="car"><option>BMW</option><option>Mercedes-Benz</option></select>
-              </label>
-              <label><span>МОДЕЛЬ / ГОД</span><input type="text" name="model" placeholder="Например, X5 G05 / 2021" /></label>
-            </div>
-            <label><span>ЧТО НУЖНО СДЕЛАТЬ?</span><textarea name="message" rows="2" placeholder="Коротко опишите задачу или симптомы"></textarea></label>
-            <div class="form-submit">
-              <label class="consent">
-                <input type="checkbox" name="personal_data_consent" required />
-                <span aria-hidden="true"></span>
-                <small>Даю <a href="./consent" target="_blank">согласие на обработку данных</a> и ознакомлен с <a href="./privacy" target="_blank">Политикой</a>. Заявка будет отправлена администрации сервиса.</small>
-              </label>
-              <button class="button button--primary" type="submit" data-submit-button><span data-submit-label>ОТПРАВИТЬ ЗАЯВКУ</span><svg viewBox="0 0 18 18"><path d="M4 9h10M10 5l4 4-4 4" /></svg></button>
-            </div>
-            <div class="form-success" aria-live="polite" tabindex="-1" data-form-result>
-              <small data-result-kicker>ЗАЯВКА ОТПРАВЛЕНА</small>
-              <strong data-result-title>Спасибо!</strong>
-              <p data-result-text>Мы получили ваше обращение и свяжемся с вами по указанному номеру.</p>
-              <div class="form-success__actions">
-                <a class="button form-success__open" href="https://wa.me/79255054506" target="_blank" rel="noopener noreferrer" data-whatsapp-link hidden>
-                  <span>ОТПРАВИТЬ В WHATSAPP</span><svg viewBox="0 0 18 18"><path d="M4 9h10M10 5l4 4-4 4" /></svg>
-                </a>
-                <a class="form-success__phone" href="tel:+79255054506">ИЛИ ПОЗВОНИТЬ: +7 (925) 505-45-06</a>
-              </div>
-              <button class="form-success__back" type="button" data-form-back>ОТПРАВИТЬ ЕЩЁ</button>
-            </div>
-          </form>
+          <div class="direct-contact__channels" aria-label="Способы связи с сервисом">
+            <a class="contact-channel contact-channel--phone reveal-card" href="tel:+79255054506">
+              <span><small>САМЫЙ БЫСТРЫЙ СПОСОБ</small><strong>ПОЗВОНИТЬ В СЕРВИС</strong></span>
+              <b>+7 (925) 505-45-06</b>
+              <i aria-hidden="true">→</i>
+            </a>
+            <a class="contact-channel reveal-card" href="https://max.ru/" target="_blank" rel="noreferrer" data-copy-phone="79255054506" title="Номер телефона скопируется">
+              <small>НАПИСАТЬ</small><strong>MAX</strong><span>ОТКРЫТЬ ↗</span>
+            </a>
+            <a class="contact-channel reveal-card" href="https://wa.me/79255054506?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20BMW%20%D0%A2%D0%B5%D1%80%D1%80%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D1%8F." target="_blank" rel="noreferrer">
+              <small>НАПИСАТЬ</small><strong>WHATSAPP</strong><span>ОТКРЫТЬ ↗</span>
+            </a>
+            <a class="contact-channel reveal-card" href="https://t.me/+79255054506" target="_blank" rel="noreferrer">
+              <small>НАПИСАТЬ</small><strong>TELEGRAM</strong><span>ОТКРЫТЬ ↗</span>
+            </a>
+          </div>
         </div>
       </section>
 

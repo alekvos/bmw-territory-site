@@ -4,8 +4,6 @@
   "private": true,
   "scripts": {
     "build": "node build.mjs",
-    "dev": "node serve.mjs",
-    "dev:api": "node server/booking-service.mjs",
-    "test": "npm test --prefix server"
+    "dev": "node serve.mjs"
   }
 }

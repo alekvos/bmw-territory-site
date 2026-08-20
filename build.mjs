@@ -12,7 +12,6 @@ for (const file of [
   "index.html",
   "404.html",
   "privacy.html",
-  "consent.html",
   "fonts.css",
   "styles.css",
   "script.js",

@@ -208,7 +208,7 @@ const serviceCatalog = {
 const serviceKey = document.body.dataset.service;
 const service = serviceCatalog[serviceKey] || serviceCatalog.diagnostics;
 const app = document.querySelector('#serviceApp');
-const serviceUrl = `../?service=${encodeURIComponent(service.shortTitle)}#booking`;
+const serviceUrl = '../#direct-contact';
 
 const arrowSvg = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 7l5 5-5 5" /></svg>';
 const messengerLinksMarkup = `
@@ -289,7 +289,7 @@ app.innerHTML = `
         </div>
         <a class="header-phone" href="tel:+79255054506"><small>ПН–ПТ, 10:00–20:00</small><span>+7 (925) 505-45-06</span></a>
       </div>
-      <a class="button button--compact page-link" href="${serviceUrl}"><span>ЗАПИСАТЬСЯ</span>${arrowSvg}</a>
+      <a class="button button--compact page-link" href="${serviceUrl}"><span>СВЯЗАТЬСЯ</span>${arrowSvg}</a>
     </div>
     <button class="menu-toggle" type="button" aria-label="Открыть меню" aria-expanded="false"><span></span><span></span></button>
   </header>
@@ -307,7 +307,7 @@ app.innerHTML = `
         ${messengerLinksMarkup}
       </div>
     </div>
-    <a class="button page-link" href="${serviceUrl}">ЗАПИСАТЬСЯ</a>
+    <a class="button page-link" href="${serviceUrl}">СВЯЗАТЬСЯ</a>
   </div>
 
   <main>
@@ -398,8 +398,8 @@ app.innerHTML = `
       <div class="service-cta__line" aria-hidden="true"></div>
       <span class="service-cta__eyebrow">${service.number} / ${service.code}</span>
       <h2>ОБСУДИМ ВАШ<br /><span>BMW?</span></h2>
-      <p>Опишите симптом — мастер уточнит детали и предложит правильный формат первого визита.</p>
-      <div><a class="button button--primary page-link" href="${serviceUrl}"><span>ЗАПИСАТЬСЯ В СЕРВИС</span>${arrowSvg}</a><a href="tel:+79255054506">+7 (925) 505-45-06</a></div>
+      <p>Позвоните или напишите — мастер уточнит детали и предложит правильный формат первого визита.</p>
+      <div><a class="button button--primary page-link" href="${serviceUrl}"><span>СВЯЗАТЬСЯ С СЕРВИСОМ</span>${arrowSvg}</a><a href="tel:+79255054506">+7 (925) 505-45-06</a></div>
     </section>
   </main>
 

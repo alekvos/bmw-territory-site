@@ -171,12 +171,15 @@
 .service-cta > div:last-child > a:last-child { font: 500 13px/1 var(--font-mono); }
 
 .service-footer { min-height: 180px; padding: 38px clamp(22px, 4.4vw, 84px); display: grid; grid-template-columns: 1.3fr 1fr 1.2fr auto; gap: 45px; align-items: center; border-top: 1px solid var(--line); background: #07090c; }
-.service-footer p { margin: 0; color: #7b8791; font-size: 12px; line-height: 1.65; }
-.service-footer > span { color: #687680; font: 500 8px/1 var(--font-mono); }
-.service-footer__meta { display: flex; flex-direction: column; align-items: flex-end; gap: 14px; color: #73818c; font: 500 10px/1.45 var(--font-mono); letter-spacing: .06em; text-align: right; }
-.service-footer__meta small { max-width: 320px; color: #596671; font-size: 8px; line-height: 1.45; letter-spacing: .02em; }
-.service-footer__meta a { transition: color .25s; }
+.service-footer p { margin: 0; color: #a0adb6; font-size: 13px; line-height: 1.65; }
+.service-footer > span { color: #95a3ad; font: 500 11px/1.45 var(--font-mono); }
+.service-footer__meta { display: flex; flex-direction: column; align-items: flex-end; gap: 14px; color: #a7b5bf; font: 500 11px/1.5 var(--font-mono); letter-spacing: .05em; text-align: right; }
+.service-footer__meta small { max-width: 340px; color: #8e9ca6; font-size: 10px; line-height: 1.55; letter-spacing: .01em; }
+.service-footer__meta a { min-height: 28px; display: inline-flex; align-items: center; color: #d0dce4; transition: color .25s; }
 .service-footer__meta a:hover { color: var(--blue-bright); }
+
+.copy-toast { position: fixed; z-index: 1200; left: 50%; bottom: 28px; max-width: min(420px, calc(100vw - 32px)); padding: 15px 20px; color: #f4f9fc; background: rgba(7,26,40,.96); border: 1px solid rgba(103,201,237,.42); box-shadow: 0 18px 55px rgba(2,17,27,.28); font: 500 12px/1.45 var(--font-mono); letter-spacing: .03em; text-align: center; transform: translate(-50%, 18px); opacity: 0; pointer-events: none; transition: opacity .25s, transform .25s; }
+.copy-toast.is-visible { opacity: 1; transform: translate(-50%, 0); }
 
 .service-transition span, .service-back, .service-eyebrow, .service-phone small,
 .service-assurance, .service-detail-hero__visual-top, .service-detail-hero__visual-bottom,
@@ -259,6 +262,7 @@
   .service-cta .button { width: 100%; }
   .service-footer { grid-template-columns: 1fr; gap: 26px; padding-top: 45px; padding-bottom: 45px; }
   .service-footer__meta { align-items: flex-start; text-align: left; }
+  .copy-toast { bottom: 18px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -156,7 +156,7 @@ body.is-loaded .title-line i { animation-play-state: running; }
 .descriptor-script { flex: 0 0 auto; color: var(--blue-bright); font: 600 italic clamp(25px, 2.2vw, 42px)/1 var(--font-serif); transform: rotate(-4deg); }
 .hero__descriptor p { margin: 0; max-width: 430px; color: #4b5d69; font-size: clamp(13px, .95vw, 16px); line-height: 1.65; }
 .hero__actions { display: flex; align-items: center; gap: 34px; margin-top: 37px; }
-.text-link { display: inline-flex; flex-direction: column; gap: 8px; color: #1e3443; font: 600 8px/1 var(--font-display); letter-spacing: .1em; }
+.text-link { min-height: 28px; display: inline-flex; flex-direction: column; justify-content: center; gap: 8px; color: #1e3443; font: 600 8px/1 var(--font-display); letter-spacing: .1em; }
 .text-link i { display: block; width: 100%; height: 1px; background: #8a9aa5; position: relative; overflow: hidden; }
 .text-link i::after { content: ""; position: absolute; inset: 0; background: var(--blue-bright); transform: translateX(-101%); transition: transform .3s; }
 .text-link:hover i::after { transform: none; }
@@ -269,7 +269,7 @@ body.is-loaded:not(.car-arrived) .car-wheel .wheel-spokes { animation: wheelArri
 .process-item:hover .process-icon { border-color: var(--blue); box-shadow: 0 0 30px rgba(9,118,200,.13); }
 .process-icon svg { width: 48px; fill: none; stroke: #5fb8ee; stroke-width: 1.5; }
 .process-item h3 { margin: 0 0 18px; font: 500 20px/1.25 var(--font-display); letter-spacing: -.03em; }
-.process-item p { max-width: 280px; margin: 0; color: #6f7c87; font-size: 13px; line-height: 1.65; }
+.process-item p { max-width: 280px; margin: 0; color: #5f6e79; font-size: 14px; line-height: 1.65; }
 
 .about { min-height: 990px; background: #076bb4; overflow: hidden; }
 .about::before { content: ""; position: absolute; inset: 0; background: linear-gradient(115deg, rgba(0,0,0,.18), transparent 45%), radial-gradient(circle at 80% 100%, rgba(95,206,255,.18), transparent 42%); }
@@ -359,11 +359,16 @@ body.is-loaded:not(.car-arrived) .car-wheel .wheel-spokes { animation: wheelArri
 .contact-details strong, .contact-details a { font-size: 14px; font-weight: 500; }
 .contacts__card .button { align-self: flex-start; }
 
-.site-footer { min-height: 125px; padding: 35px clamp(22px, 4.4vw, 84px); display: grid; grid-template-columns: 1fr 1fr 1fr; align-items: center; gap: 30px; border-top: 1px solid var(--line); background: #06080a; }
-.site-footer > p { max-width: 590px; margin: 0; color: #69737c; font-size: 11px; line-height: 1.6; text-align: center; }
-.site-footer > p strong { color: #9ca7b0; font-weight: 500; }
-.site-footer > p small { color: #56616b; font-size: 9px; line-height: 1.45; }
-.site-footer > div { justify-self: end; display: flex; flex-wrap: wrap; justify-content: flex-end; align-items: center; gap: 12px 24px; color: #56616b; font: 500 7px/1 var(--font-mono); letter-spacing: .08em; }
+.site-footer { min-height: 148px; padding: 38px clamp(22px, 4.4vw, 84px); display: grid; grid-template-columns: 1fr 1.15fr 1fr; align-items: center; gap: 34px; border-top: 1px solid var(--line); background: #06080a; }
+.site-footer > p { max-width: 620px; margin: 0; color: #9aa8b2; font-size: 12px; line-height: 1.65; text-align: center; }
+.site-footer > p strong { color: #d2dbe1; font-weight: 500; }
+.site-footer > p small { color: #8b99a3; font-size: 11px; line-height: 1.55; }
+.site-footer > div { justify-self: end; display: flex; flex-wrap: wrap; justify-content: flex-end; align-items: center; gap: 12px 24px; color: #a7b5bf; font: 500 11px/1.4 var(--font-mono); letter-spacing: .08em; }
+.site-footer > div a { min-height: 28px; display: inline-flex; align-items: center; color: #d0dce4; transition: color .25s; }
+.site-footer > div a:hover { color: var(--blue-bright); }
+
+.copy-toast { position: fixed; z-index: 1200; left: 50%; bottom: 28px; max-width: min(420px, calc(100vw - 32px)); padding: 15px 20px; color: #f4f9fc; background: rgba(7,26,40,.96); border: 1px solid rgba(103,201,237,.42); box-shadow: 0 18px 55px rgba(2,17,27,.28); font: 500 12px/1.45 var(--font-mono); letter-spacing: .03em; text-align: center; transform: translate(-50%, 18px); opacity: 0; pointer-events: none; transition: opacity .25s, transform .25s; }
+.copy-toast.is-visible { opacity: 1; transform: translate(-50%, 0); }
 
 /* Readability pass: the technical microcopy remains compact, but no longer feels miniature. */
 .page-loader__mark small, .section-transition__label span, .eyebrow, .desktop-nav a,
@@ -385,9 +390,10 @@ body.is-loaded:not(.car-arrived) .car-wheel .wheel-spokes { animation: wheelArri
   .header-phone small, .header-messengers > span { display: none; }
   .header-contact { min-width: 192px; }
   .hero { min-height: 780px; }
-  .hero__copy { width: 60%; }
+  .hero__copy { width: 48%; }
+  .hero__title { font-size: clamp(48px, 4.6vw, 64px); }
   .hero-car { right: -3vw; width: 63vw; }
-  .hero-car--photo { right: -1vw; width: min(61vw, 950px); }
+  .hero-car--photo { right: -2vw; width: min(56vw, 850px); top: 54%; }
   .section { padding-left: 5vw; padding-right: 5vw; }
   .approach { gap: 5vw; }
   .direct-contact__grid { gap: 5vw; }
@@ -396,10 +402,14 @@ body.is-loaded:not(.car-arrived) .car-wheel .wheel-spokes { animation: wheelArri
 @media (max-width: 1080px) {
   .desktop-nav, .header-actions { display: none; }
   .menu-toggle { display: block; }
-  .hero { height: auto; min-height: 860px; align-items: flex-start; padding-top: 172px; }
-  .hero__copy { width: 78%; }
+  .hero { height: auto; min-height: 0; max-height: none; display: block; padding-top: 160px; padding-bottom: 100px; }
+  .hero__copy { width: 100%; max-width: 830px; margin-top: 0; }
+  .hero__title { max-width: 800px; font-size: clamp(48px, 7vw, 72px); }
+  .hero__descriptor { max-width: 720px; }
   .hero-car { width: 72vw; top: 58%; right: -12vw; }
-  .hero-car--photo { width: 75vw; top: 59%; right: -11vw; }
+  .hero-car--photo { position: relative; width: min(88%, 830px); top: auto; right: auto; margin: 52px 0 0 auto; transform: translateX(112%); animation-name: carEnterMobile; }
+  .hero__footnote { bottom: 28px; }
+  .scroll-cue { display: none; }
   .section-heading { grid-template-columns: 1fr; gap: 36px; }
   .section-heading > div:last-child { align-items: flex-start; }
   .service-card { grid-template-columns: 45% 55%; }
@@ -497,6 +507,7 @@ body.is-loaded:not(.car-arrived) .car-wheel .wheel-spokes { animation: wheelArri
   .site-footer { grid-template-columns: 1fr; text-align: left; }
   .site-footer > p { text-align: left; }
   .site-footer > div { justify-self: start; flex-wrap: wrap; }
+  .copy-toast { bottom: 18px; }
 }
 
 .privacy-page { min-height: 100vh; color: #101820; background: radial-gradient(circle at 78% 18%, rgba(43,169,255,.17), transparent 26%), linear-gradient(135deg, #f8fbfd 0%, #e6f0f5 58%, #d5e6ef 100%); }

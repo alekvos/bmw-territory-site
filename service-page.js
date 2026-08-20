@@ -419,10 +419,50 @@ const transition = document.querySelector('.service-transition');
 const menuToggle = document.querySelector('.menu-toggle');
 const mobileMenu = document.querySelector('.mobile-menu');
 
+let copyToastTimer = 0;
+
+const showCopyToast = (message) => {
+  let toast = document.querySelector('.copy-toast');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.className = 'copy-toast';
+    toast.setAttribute('role', 'status');
+    toast.setAttribute('aria-live', 'polite');
+    document.body.append(toast);
+  }
+
+  toast.textContent = message;
+  toast.classList.add('is-visible');
+  window.clearTimeout(copyToastTimer);
+  copyToastTimer = window.setTimeout(() => toast.classList.remove('is-visible'), 2800);
+};
+
+const copyText = async (value) => {
+  if (navigator.clipboard?.writeText && window.isSecureContext) {
+    await navigator.clipboard.writeText(value);
+    return;
+  }
+
+  const fallback = document.createElement('textarea');
+  fallback.value = value;
+  fallback.setAttribute('readonly', '');
+  fallback.style.position = 'fixed';
+  fallback.style.opacity = '0';
+  document.body.append(fallback);
+  fallback.select();
+  const copied = document.execCommand('copy');
+  fallback.remove();
+  if (!copied) throw new Error('copy-failed');
+};
+
 document.querySelectorAll('[data-copy-phone]').forEach((link) => {
   link.addEventListener('click', () => {
     const phone = link.dataset.copyPhone;
-    if (phone && navigator.clipboard?.writeText) navigator.clipboard.writeText(`+${phone}`).catch(() => {});
+    if (!phone) return;
+
+    copyText(`+${phone}`)
+      .then(() => showCopyToast('Номер +7 (925) 505-45-06 скопирован. Вставьте его в поиск MAX.'))
+      .catch(() => showCopyToast('Для MAX используйте номер +7 (925) 505-45-06.'));
   });
 });
 

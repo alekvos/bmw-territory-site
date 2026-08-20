@@ -367,9 +367,6 @@ body.is-loaded:not(.car-arrived) .car-wheel .wheel-spokes { animation: wheelArri
 .site-footer > div a { min-height: 28px; display: inline-flex; align-items: center; color: #d0dce4; transition: color .25s; }
 .site-footer > div a:hover { color: var(--blue-bright); }
 
-.copy-toast { position: fixed; z-index: 1200; left: 50%; bottom: 28px; max-width: min(420px, calc(100vw - 32px)); padding: 15px 20px; color: #f4f9fc; background: rgba(7,26,40,.96); border: 1px solid rgba(103,201,237,.42); box-shadow: 0 18px 55px rgba(2,17,27,.28); font: 500 12px/1.45 var(--font-mono); letter-spacing: .03em; text-align: center; transform: translate(-50%, 18px); opacity: 0; pointer-events: none; transition: opacity .25s, transform .25s; }
-.copy-toast.is-visible { opacity: 1; transform: translate(-50%, 0); }
-
 /* Readability pass: the technical microcopy remains compact, but no longer feels miniature. */
 .page-loader__mark small, .section-transition__label span, .eyebrow, .desktop-nav a,
 .hero-car__meta, .section-kicker, .process-item__head { font-size: 11px; }
@@ -507,7 +504,6 @@ body.is-loaded:not(.car-arrived) .car-wheel .wheel-spokes { animation: wheelArri
   .site-footer { grid-template-columns: 1fr; text-align: left; }
   .site-footer > p { text-align: left; }
   .site-footer > div { justify-self: start; flex-wrap: wrap; }
-  .copy-toast { bottom: 18px; }
 }
 
 .privacy-page { min-height: 100vh; color: #101820; background: radial-gradient(circle at 78% 18%, rgba(43,169,255,.17), transparent 26%), linear-gradient(135deg, #f8fbfd 0%, #e6f0f5 58%, #d5e6ef 100%); }
